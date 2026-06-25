@@ -1,0 +1,662 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+} */
+
+/* WorkGuard Documentation — Global Styles */
+
+:root {
+  --wg-navy: #0f1729;
+  --wg-navy-mid: #1a2540;
+  --wg-navy-light: #243050;
+  --wg-blue: #3b6ef8;
+  --wg-blue-light: #5a87ff;
+  --wg-blue-pale: #e8eeff;
+  --wg-teal: #00c2a8;
+  --wg-teal-light: #e0faf7;
+  --wg-slate: #64748b;
+  --wg-slate-light: #94a3b8;
+  --wg-border: #e2e8f0;
+  --wg-border-dark: #cbd5e1;
+  --wg-bg: #f8fafc;
+  --wg-white: #ffffff;
+  --wg-text: #1e293b;
+  --wg-text-muted: #64748b;
+  --wg-success: #10b981;
+  --wg-warning: #f59e0b;
+  --wg-danger: #ef4444;
+  --wg-sidebar-w: 264px;
+  --wg-navbar-h: 60px;
+  --wg-font: 'Inter', -apple-system, sans-serif;
+  --wg-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--wg-font);
+  color: var(--wg-text);
+  background: var(--wg-bg);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Navbar ── */
+.wg-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--wg-navbar-h);
+  background: var(--wg-navy);
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.wg-navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+}
+
+.wg-navbar__icon {
+  width: 32px;
+  height: 32px;
+  background: var(--wg-blue);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: white;
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+
+.wg-navbar__brand {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.wg-navbar__divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255,255,255,0.15);
+  margin: 0 1rem;
+}
+
+.wg-navbar__section {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.55);
+}
+
+.wg-navbar__version {
+  margin-left: auto;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--wg-teal);
+  background: rgba(0, 194, 168, 0.1);
+  border: 1px solid rgba(0, 194, 168, 0.25);
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-family: var(--wg-mono);
+}
+
+/* ── Layout Shell ── */
+.wg-shell {
+  display: flex;
+  padding-top: var(--wg-navbar-h);
+  min-height: 100vh;
+}
+
+/* ── Sidebar ── */
+.wg-sidebar {
+  width: var(--wg-sidebar-w);
+  flex-shrink: 0;
+  position: fixed;
+  top: var(--wg-navbar-h);
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  background: var(--wg-white);
+  border-right: 1px solid var(--wg-border);
+  padding: 1.25rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--wg-border) transparent;
+}
+
+.wg-sidebar::-webkit-scrollbar { width: 4px; }
+.wg-sidebar::-webkit-scrollbar-track { background: transparent; }
+.wg-sidebar::-webkit-scrollbar-thumb { background: var(--wg-border-dark); border-radius: 4px; }
+
+.wg-sidebar__group {
+  margin-bottom: 0.25rem;
+}
+
+.wg-sidebar__label {
+  padding: 0.5rem 1.25rem 0.25rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wg-slate-light);
+}
+
+.wg-sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 450;
+  color: var(--wg-slate);
+  text-decoration: none;
+  border-radius: 0;
+  transition: background 0.12s, color 0.12s;
+  border-left: 2px solid transparent;
+  line-height: 1.4;
+}
+
+.wg-sidebar__link:hover {
+  background: var(--wg-bg);
+  color: var(--wg-text);
+}
+
+.wg-sidebar__link.active {
+  color: var(--wg-blue);
+  font-weight: 600;
+  background: var(--wg-blue-pale);
+  border-left-color: var(--wg-blue);
+}
+
+.wg-sidebar__link svg {
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.wg-sidebar__link.active svg {
+  opacity: 1;
+}
+
+/* ── Main Content ── */
+.wg-content {
+  flex: 1;
+  margin-left: var(--wg-sidebar-w);
+  min-width: 0;
+}
+
+.wg-content__inner {
+  max-width: 1000px;
+  width: 100%;
+  padding: 2.5rem 4rem 4rem;
+}
+
+
+
+/* ── Page Header ── */
+.wg-page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--wg-border);
+}
+
+.wg-page-header__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--wg-blue);
+  margin-bottom: 0.5rem;
+}
+
+.wg-page-header__title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--wg-text);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin: 0 0 0.75rem;
+}
+
+.wg-page-header__desc {
+  font-size: 1rem;
+  color: var(--wg-text-muted);
+  line-height: 1.65;
+  margin: 0;
+  max-width: 620px;
+}
+
+/* ── Sections ── */
+.wg-section {
+  margin-bottom: 2.5rem;
+}
+
+.wg-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--wg-text);
+  letter-spacing: -0.3px;
+  margin: 0 0 0.5rem;
+  scroll-margin-top: calc(var(--wg-navbar-h) + 1rem);
+}
+
+.wg-section h3 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--wg-text);
+  margin: 1.25rem 0 0.5rem;
+}
+
+.wg-section p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--wg-text-muted);
+  margin: 0 0 0.875rem;
+}
+
+.wg-section p strong {
+  color: var(--wg-text);
+  font-weight: 600;
+}
+
+/* ── Callout Boxes ── */
+.wg-callout {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin: 1rem 0;
+  border-left: 3px solid;
+}
+
+.wg-callout--tip {
+  background: var(--wg-blue-pale);
+  border-color: var(--wg-blue);
+  color: #2d4a9e;
+}
+
+.wg-callout--warning {
+  background: #fff8e7;
+  border-color: var(--wg-warning);
+  color: #854d0e;
+}
+
+.wg-callout--danger {
+  background: #fef2f2;
+  border-color: var(--wg-danger);
+  color: #991b1b;
+}
+
+.wg-callout--success {
+  background: #f0fdf4;
+  border-color: var(--wg-success);
+  color: #166534;
+}
+
+.wg-callout__icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+  margin-top: 1px;
+}
+
+/* ── Tables ── */
+.wg-table-wrap {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--wg-border);
+  margin: 1rem 0;
+}
+
+.wg-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.wg-table thead th {
+  background: var(--wg-bg);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--wg-slate);
+  padding: 0.625rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--wg-border);
+  white-space: nowrap;
+}
+
+.wg-table tbody td {
+  padding: 0.625rem 1rem;
+  border-bottom: 1px solid var(--wg-border);
+  color: var(--wg-text);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.wg-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.wg-table tbody tr:hover td {
+  background: var(--wg-bg);
+}
+
+.wg-table code {
+  background: #f1f5f9;
+  border: 1px solid var(--wg-border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-family: var(--wg-mono);
+  font-size: 0.8125rem;
+  color: var(--wg-blue);
+}
+
+/* ── Status Badges ── */
+.wg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.wg-badge--green { background: #dcfce7; color: #166534; }
+.wg-badge--red { background: #fee2e2; color: #991b1b; }
+.wg-badge--blue { background: var(--wg-blue-pale); color: #1d4ed8; }
+.wg-badge--yellow { background: #fef9c3; color: #854d0e; }
+.wg-badge--gray { background: #f1f5f9; color: var(--wg-slate); }
+.wg-badge--teal { background: var(--wg-teal-light); color: #0f766e; }
+
+/* ── Code blocks ── */
+.wg-code {
+  background: var(--wg-navy);
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  font-family: var(--wg-mono);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+/* ── Steps List ── */
+.wg-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0;
+  counter-reset: step-counter;
+}
+
+.wg-steps li {
+  counter-increment: step-counter;
+  display: flex;
+  gap: 0.875rem;
+  margin-bottom: 0.75rem;
+  align-items: flex-start;
+  font-size: 0.9375rem;
+  color: var(--wg-text-muted);
+  line-height: 1.6;
+}
+
+.wg-steps li::before {
+  content: counter(step-counter);
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  background: var(--wg-blue);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* ── Divider ── */
+.wg-divider {
+  border: none;
+  border-top: 1px solid var(--wg-border);
+  margin: 2rem 0;
+}
+
+/* ── Feature Grid (public docs) ── */
+.wg-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.wg-feature-card {
+  background: var(--wg-white);
+  border: 1px solid var(--wg-border);
+  border-radius: 10px;
+  padding: 1.125rem 1.25rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.wg-feature-card:hover {
+  border-color: var(--wg-blue-light);
+  box-shadow: 0 2px 12px rgba(59, 110, 248, 0.08);
+}
+
+.wg-feature-card__icon {
+  font-size: 1.375rem;
+  margin-bottom: 0.625rem;
+}
+
+.wg-feature-card__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--wg-text);
+  margin: 0 0 0.375rem;
+}
+
+.wg-feature-card__desc {
+  font-size: 0.8125rem;
+  color: var(--wg-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Inline code ── */
+code {
+  background: #f1f5f9;
+  border: 1px solid var(--wg-border);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-family: var(--wg-mono);
+  font-size: 0.85em;
+  color: #2d4a9e;
+}
+
+/* ── Priority list ── */
+.wg-priority-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0;
+}
+
+.wg-priority-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.wg-priority-list li:nth-child(odd) { background: var(--wg-bg); }
+
+.wg-priority-num {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  background: var(--wg-navy-mid);
+  color: rgba(255,255,255,0.75);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  font-family: var(--wg-mono);
+}
+
+/* ── Comparison table ── */
+.wg-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.wg-comparison__col {
+  background: var(--wg-white);
+  border: 1px solid var(--wg-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.wg-comparison__header {
+  padding: 0.75rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  background: var(--wg-bg);
+  border-bottom: 1px solid var(--wg-border);
+}
+
+.wg-comparison__body {
+  padding: 0.75rem 1rem;
+}
+
+.wg-comparison__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.375rem 0;
+  font-size: 0.875rem;
+  color: var(--wg-text-muted);
+  border-bottom: 1px solid var(--wg-border);
+}
+
+.wg-comparison__row:last-child { border-bottom: none; }
+
+/* ── Formula Box ── */
+.wg-formula {
+  background: var(--wg-navy);
+  color: #a5f3fc;
+  font-family: var(--wg-mono);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  letter-spacing: 0.3px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  
+  .wg-content {
+    margin-left: 0;
+  }
+  .wg-content__inner {
+    padding: 1.5rem 1.25rem 3rem;
+  }
+}
+
+
+/* navebar menu */
+
+.wg-navbar__menu-btn {
+  display: none;
+
+  background: none;
+  border: none;
+
+  color: white;
+
+  font-size: 1.2rem;
+
+  margin-right: 1rem;
+
+  cursor: pointer;
+}
+.wg-sidebar__close {
+  display: none;
+}
+@media (max-width:768px){
+
+  .wg-navbar__menu-btn{
+    display:block;
+  }
+
+  .wg-sidebar{
+
+    transform: translateX(-100%);
+
+    transition: .3s;
+
+    z-index:2000;
+  }
+
+  .wg-sidebar.mobile-open{
+    transform: translateX(0);
+  }
+
+  .wg-sidebar__close{
+    display:block;
+
+    margin:1rem;
+
+    background:none;
+    border:none;
+
+    font-size:1.5rem;
+  }
+
+}

@@ -1,0 +1,39 @@
+.docs-layout {
+    display: flex;
+    min-height: calc(100vh - 80px);
+}
+
+.docs-content {
+    flex: 1;
+    padding: 40px;
+}
+
+@media (max-width: 768px) {
+  .docs-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .docs-content {
+    padding: 16px;
+  }
+}
+
+/* .docs-layout {
+  display: flex;
+} */
+
+.sidebar {
+  width: 280px;
+  height: calc(100vh - 80px);
+  position: sticky;
+  top: 80px;
+  overflow-y: auto;
+}
+
+.docs-content {
+  flex: 1;
+  padding: 40px;
+  min-width: 0;
+}
