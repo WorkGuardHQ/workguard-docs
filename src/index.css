@@ -607,8 +607,46 @@ code {
   .wg-content__inner {
     padding: 1.5rem 1.25rem 3rem;
   }
+    .wg-navbar {
+    padding: 0 1rem;
+    justify-content: space-between;
+  }
+
+  .wg-navbar__divider,
+  .wg-navbar__section,
+  .wg-navbar__links,
+  .wg-navbar__version {
+    display: none;
+  }
+
+  .wg-navbar__menu-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 1.5rem;
+  }
+
+  .wg-navbar__brand {
+    font-size: 0.9rem;
+  }
+
+  .navbar-logo {
+    width: 34px;
+    height: 34px;
+  }
+
 }
 
+.wg-navbar__logo {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.wg-navbar__brand {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* navebar menu */
 
@@ -660,3 +698,4 @@ code {
   }
 
 }
+

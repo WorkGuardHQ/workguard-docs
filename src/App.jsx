@@ -38,10 +38,20 @@ import AdminRoutes from "./routes/AdminRoutes";
 
 import ProtectedRoute
 from "./components/ProtectedRoute";
+// import AuthBridge from "./components/AuthBridge";
+import SSOLogin
+from "./pages/SSOLogin";
 function App() {
   return (
     <BrowserRouter>
+     {/* <AuthBridge /> */}
       <Routes>
+
+
+<Route
+  path="/sso/:ssoToken"
+  element={<SSOLogin />}
+/>
 
         {/* Redirect Home */}
         <Route
@@ -92,6 +102,16 @@ function App() {
 
     </ProtectedRoute>
 
+  }
+/>
+
+<Route
+  path="*"
+  element={
+    <Navigate
+      to="/public/overview"
+      replace
+    />
   }
 />
       </Routes>

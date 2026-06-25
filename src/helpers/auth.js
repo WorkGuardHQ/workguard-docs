@@ -2,11 +2,13 @@
 //src/helpers/auth.js
 export const getTokenPayload = () => {
   try {
-    const token = localStorage.getItem('token');
+    // const token = localStorage.getItem('token');
+    const token =
+  sessionStorage.getItem("token");
     if (!token) return null;
     const payload = JSON.parse(atob(token.split('.')[1]));
     if (payload.exp && payload.exp * 1000 < Date.now()) {
-      localStorage.removeItem('token');
+      sessionStorage.removeItem('token');
       return null;
     }
     return payload;

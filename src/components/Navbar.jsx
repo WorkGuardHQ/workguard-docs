@@ -36,7 +36,7 @@ import { Link, useLocation } from 'react-router-dom'
 import useAuth from "../hooks/useAuth";
 import { useState } from "react";
 // import { FaBars } from "react-icons/fa";
-
+import { FaBars } from "react-icons/fa";
 import logo from "../assets/images/workguard-icon.png";
 import "./../styles/Navbar.css";
 
@@ -120,7 +120,7 @@ export default function Navbar({  onMenuClick
   className="wg-navbar__menu-btn"
   onClick={onMenuClick}
 >
-  ☰
+  <FaBars />
 </button>
 
     </nav>

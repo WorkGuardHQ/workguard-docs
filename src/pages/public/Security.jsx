@@ -49,10 +49,10 @@ export default function Security() {
 
       <hr className="wg-divider" />
 
-      <div className="wg-section">
+      {/* <div className="wg-section">
         <h2>Audit Trail</h2>
         <p>WorkGuard maintains detailed audit logs throughout the platform: all admin overrides are logged with name, timestamp, and reason; biometric resets are logged; device approvals and disablements are tracked; leave and payroll approvals maintain full histories.</p>
-      </div>
+      </div> */}
     </>
   )
 }
