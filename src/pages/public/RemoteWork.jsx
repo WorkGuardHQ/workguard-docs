@@ -18,29 +18,22 @@ export default function RemoteWork() {
           <div>A remote permission is an <strong>authorization</strong>, not automatic attendance. The employee must still check in and check out through the app. If they don't, the day counts as an absence.</div>
         </div>
         <p>Remote Work Permission bypasses both GPS location and WiFi checks for the authorized employee on the granted date. They can check in from anywhere in the world.</p>
+
+        <div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">💡</span>
+  <div>
+    Device verification and biometric authentication (if enabled)
+    are still required even when remote permission is granted.
+  </div>
+</div>
       </div>
+
+      
 
       <hr className="wg-divider" />
 
       <div className="wg-section">
-        <h2>Remote Permission vs. Emergency Mode</h2>
-        <div className="wg-table-wrap">
-          <table className="wg-table">
-            <thead><tr><th></th><th>Remote Permission</th><th>Emergency Mode</th></tr></thead>
-            <tbody>
-              <tr><td>Affects</td><td>One specific employee</td><td>All employees at a branch</td></tr>
-              <tr><td>Bypasses WiFi check</td><td>✅ Yes</td><td>✅ Yes</td></tr>
-              <tr><td>Bypasses GPS check</td><td>✅ Yes — can be anywhere</td><td>❌ No — must be at branch</td></tr>
-              <tr><td>Duration</td><td>One specific date</td><td>Until manually disabled</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <hr className="wg-divider" />
-
-      <div className="wg-section">
-        <h2>Granting Permission</h2>
+        <h2>Managing Remote Attendance</h2>
         <h3>Single Permission</h3>
         <ol className="wg-steps">
           <li>Go to <strong>Remote Permissions</strong> in the admin panel</li>

@@ -17,7 +17,8 @@ const features = [
   { icon: '⏱️', title: 'Overtime & Bonuses', desc: 'Six overtime types with multiplier or fixed-rate calculation. Three bonus policy types.', path: '/public/overtime-bonus' },
   { icon: '📊', title: 'Reports', desc: 'Employee, company, and yearly reports exported to PDF or Excel.', path: '/public/reports' },
   { icon: '🔒', title: 'Security', desc: 'Biometric verification, role-based access control, and full audit logging.', path: '/public/security' },
- { icon: '📝', title: 'Feedback & Notes', desc: "Admins can add performance notes and formal warnings to an employee's profile. Notes can be kept internal or shared with the employee directly.", path: '/public/feedback' },
+ { icon: '📝', title: 'Feedback & Notes',   desc: 'Manage employee feedback, performance records, and formal warnings.',
+ path: '/public/feedback' },
 ]
 
 export default function Features() {

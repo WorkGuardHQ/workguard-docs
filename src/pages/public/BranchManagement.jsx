@@ -101,7 +101,16 @@ export default function BranchManagement() {
               <tr><td>Emergency Mode</td><td>Bypasses WiFi check for all employees at this branch — GPS still required</td></tr>
             </tbody>
           </table>
+
+          
         </div>
+        <div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">📍</span>
+  <div>
+    Branches allow organizations to enforce location-based attendance
+    and manage employees across multiple physical sites.
+  </div>
+</div>
       </div>
 
       <hr className="wg-divider" />
@@ -109,6 +118,13 @@ export default function BranchManagement() {
       <div className="wg-section">
         <h2>Location Verification</h2>
         <p>Employees must be within the configured radius to check in. GPS accuracy must be <strong>300 meters or better</strong> — a weaker signal is always rejected. Employees with an active Remote Permission bypass location checks entirely.</p>
+        <div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">💡</span>
+  <div>
+    Remote permissions allow authorized employees to check in without
+    being physically present at the branch.
+  </div>
+</div>
       </div>
 
       <hr className="wg-divider" />
@@ -142,24 +158,40 @@ export default function BranchManagement() {
           <li><span className="wg-priority-num">→</span><div>How holidays are interpreted for this branch</div></li>
           <li><span className="wg-priority-num">→</span><div>How break and transit times are calculated</div></li>
         </ul>
-        <div className="wg-callout wg-callout--tip">
+        {/* <div className="wg-callout wg-callout--tip">
           <span className="wg-callout__icon">💡</span>
           <div>If an employee has a personal timezone set, it overrides the branch timezone for their own shift calculations. If a branch has no timezone set, the company timezone is used as a fallback.</div>
-        </div>
+        </div> */}
+
+        <div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">💡</span>
+  <div>
+    If no branch timezone is configured, the company timezone is used
+    automatically.
+  </div>
+</div>
       </div>
 
-      <hr className="wg-divider" />
-
-      <div className="wg-section">
-        <h2>Live Branch Map</h2>
-        <p>Admins can see a real-time map of which employees are currently checked in at each branch, including how long they've been there. Available for individual branches or a company-wide view.</p>
-      </div>
+     
 
       <hr className="wg-divider" />
 
       <div className="wg-section">
         <h2>Transit Between Branches</h2>
         <p>When an employee moves from one branch to another on the same day, WorkGuard tracks the travel time. If it exceeds the allowed transit threshold, the excess is treated as a deduction. WorkGuard automatically determines the appropriate transit allowance based on the employee's settings and branch configurations.</p>
+        <div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">🚗</span>
+  <div>
+    Transit tracking helps organizations monitor travel time between
+    branches and apply attendance deductions when necessary.
+  </div>
+</div>
+      </div>
+       <hr className="wg-divider" />
+
+      <div className="wg-section">
+        <h2>Live Branch Map</h2>
+        <p>Admins can see a real-time map of which employees are currently checked in at each branch, including how long they've been there. Available for individual branches or a company-wide view.</p>
       </div>
     </>
   )

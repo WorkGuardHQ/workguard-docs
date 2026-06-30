@@ -94,6 +94,24 @@
 
 import PageHeader from '../../components/PageHeader'
 
+import AttendancePoliciesList from '../../assets/screenshots/Attendance-Policies.png'
+
+
+import AppliedPolicyProfileImg from '../../assets/screenshots/AppliedPolicyProfileImg.png'
+import EmployeePolicyPreviewImg from '../../assets/screenshots/EmployeePolicyPreviewImg.png'
+
+// import AttendancePoliciesForm from '../../assets/screenshots/Attendance-Policies-form.png'
+
+import AttendancePoliciesForm1 from '../../assets/screenshots/Attendance-Policies-form1.png'
+
+
+import  AttendancePoliciesHistory from '../../assets/screenshots/Attendance-Policies-history.png'
+
+import AttendancePoliciesForm2 from '../../assets/screenshots/Attendance-Policies-form2.png'
+
+import AttendancePoliciesForm3 from '../../assets/screenshots/Attendance-Policies-form3.png'
+import PolicyTimelineImg from '../../assets/screenshots/PolicyTimelineImg.png'
+
 export default function AttendancePolicies() {
   return (
     <>
@@ -102,7 +120,15 @@ export default function AttendancePolicies() {
         title="Attendance Policies"
         description="Configure grace periods and deduction rates that govern how attendance is evaluated. Policies can be scoped to the company, a branch, a role, or a specific employee."
       />
+<img
+  src={AttendancePoliciesList}
+  alt="Attendance Policies List"
+  className="wg-doc-image"
+/>
 
+<p className="wg-image-caption">
+  Attendance policies list showing active policies, scopes, deduction rates, and activation status.
+</p>
       <div className="wg-section">
         <h2>Policy Scope &amp; Priority</h2>
         <div className="wg-table-wrap">
@@ -122,7 +148,102 @@ export default function AttendancePolicies() {
         </div>
       </div>
 
+
+
+
+<hr className="wg-divider" />
+
+<div className="wg-section">
+  <h2>Applied Policies Preview</h2>
+
+  <p>
+    WorkGuard automatically determines which attendance policy applies to each
+    employee based on policy priority, assigned branches, role, and employee-specific overrides.
+  </p>
+
+  <ul className="wg-priority-list">
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        Administrators can open any employee profile to review the currently applied attendance policy.
+      </div>
+    </li>
+
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        The employee profile displays the effective policy, grace periods, deduction rates, and absence rules currently in effect.
+      </div>
+    </li>
+
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        While creating or editing an employee, WorkGuard automatically previews the policy that will apply based on the employee's role, assigned branches, and salary information.
+      </div>
+    </li>
+  </ul>
+
+  <div className="wg-callout wg-callout--tip">
+    <span className="wg-callout__icon">💡</span>
+    <div>
+      The policy preview updates automatically whenever employee details such as role, branch assignments, or salary are changed.
+    </div>
+  </div>
+
+  <img
+    src={AppliedPolicyProfileImg}
+    alt="Applied attendance policy in employee profile"
+    className="wg-policy-form-image"
+  />
+
+  <p className="wg-image-caption">
+    Employee profile showing the attendance policy currently applied to the employee.
+  </p>
+
+<div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">💡</span>
+  <div>
+    This view helps administrators understand exactly which policy is affecting a specific employee before recalculating attendance or payroll.
+  </div>
+</div>
+
+  <img
+    src={EmployeePolicyPreviewImg}
+    alt="Policy preview while editing employee"
+    className="wg-doc-image"
+  />
+
+  <p className="wg-image-caption">
+    Real-time attendance policy preview displayed while creating or editing an employee.
+  </p>
+
+</div>
+
+
+{/* <div className="wg-section">
+  <h2>Create & Edit Policies</h2>
+
+  <p>
+    Administrators can create attendance policies for the entire company,
+    a specific branch, a role, or an individual employee.
+  </p>
+{/*   
+<div className="img-small">
+  <img
+  src={AttendancePoliciesForm}
+  alt="Create Attendance Policy"
+   className="wg-policy-form-image"
+/></div>
+
+  <p className="wg-image-caption">
+    Attendance policy creation form showing scope, grace periods, deduction rates, absence rules, and effective dates.
+  </p> 
+ </div> */} 
+
       <hr className="wg-divider" />
+
+
 
       <div className="wg-section">
         <h2>Grace Periods</h2>
@@ -136,6 +257,23 @@ export default function AttendancePolicies() {
             </tbody>
           </table>
         </div>
+        
+        <h2>Create & Edit Policies</h2>
+
+<p>
+  Administrators can create, edit, activate, deactivate, and review attendance policies from the Attendance Policies page.
+</p>
+
+  <img
+  src={AttendancePoliciesForm1}
+  alt="Create Attendance Policy"
+   className="wg-policy-form-image"
+/>
+
+  <p className="wg-image-caption">
+    Attendance policy creation form showing scope and grace periods
+  </p> 
+
       </div>
 
       <hr className="wg-divider" />
@@ -184,6 +322,17 @@ export default function AttendancePolicies() {
           </div>
         </div>
         <p>Transit deductions (between branches) and break deductions (same branch) use separate rates and are calculated independently.</p>
+
+        <img
+  src={AttendancePoliciesForm2}
+  alt="Create Attendance Policy"
+   className="wg-policy-form-image"
+/>
+
+  <p className="wg-image-caption">
+    Attendance policy creation form showing  deduction rates
+  </p> 
+
       </div>
 
       <hr className="wg-divider" />
@@ -213,6 +362,22 @@ export default function AttendancePolicies() {
       <div className="wg-section">
         <h2>Policy Date Range</h2>
         <p>Each policy has a <strong>start date</strong> (required) and an <strong>end date</strong> (leave empty for no expiry). Two active policies of the same scope cannot overlap in their date ranges — the system will block you from creating or saving an overlapping policy.</p>
+
+        <img
+  src={AttendancePoliciesForm3}
+  alt="Create Attendance Policy"
+   className="wg-policy-form-image"
+/>
+
+  <p className="wg-image-caption">
+    Attendance policy creation form showing absence rules, and effective dates.
+  </p> 
+  <div className="wg-callout wg-callout--warning">
+  <span className="wg-callout__icon">⚠️</span>
+  <div>
+    The system prevents overlapping active policies within the same scope to avoid ambiguous attendance calculations.
+  </div>
+</div>
       </div>
 
       <hr className="wg-divider" />
@@ -220,11 +385,22 @@ export default function AttendancePolicies() {
       <div className="wg-section">
         <h2>Policy Activation</h2>
         <p>Only <strong>active</strong> policies are applied when calculating attendance. When you activate a new policy, any previously active policy of the same scope is automatically deactivated. The system keeps a full history of when each policy was activated and deactivated.</p>
+
+        <img
+  src={AttendancePoliciesHistory}
+  alt="Policy Activation History"
+  className="wg-policy-form-image"
+/>
+
+<p className="wg-image-caption">
+  Activation history showing when policies were activated or deactivated.
+</p>
+
       </div>
 
       <hr className="wg-divider" />
 
-      <div className="wg-section">
+      {/* <div className="wg-section">
         <h2>Historical Accuracy</h2>
         <p>Every daily attendance record stores a complete <strong>snapshot</strong> of the attendance policy that was in effect at the time of calculation. This means:</p>
         <ul className="wg-priority-list">
@@ -232,8 +408,55 @@ export default function AttendancePolicies() {
           <li><span className="wg-priority-num">→</span><div>You can always review a past record and see exactly which policy applied on that day</div></li>
           <li><span className="wg-priority-num">→</span><div>The payroll run includes a <strong>policy timeline</strong> showing which policy applied on each day of the month</div></li>
         </ul>
-      </div>
+      </div> */}
+<div className="wg-section">
+  <h2>Historical Accuracy</h2>
 
+  <p>
+    Every attendance record stores a complete snapshot of the attendance policy
+    that was active when the record was calculated.
+  </p>
+
+  <ul className="wg-priority-list">
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        Changing a policy does not affect previously calculated attendance records.
+      </div>
+    </li>
+
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        Payroll calculations always use the exact policy that was active on each day.
+      </div>
+    </li>
+
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        If policies change during a month, WorkGuard automatically applies the correct policy to each affected date.
+      </div>
+    </li>
+  </ul>
+
+  <div className="wg-callout wg-callout--tip">
+    <span className="wg-callout__icon">💡</span>
+    <div>
+      Payroll previews include a policy timeline showing which attendance policy was applied throughout the month.
+    </div>
+  </div>
+
+  <img
+    src={PolicyTimelineImg}
+    alt="Policy Timeline"
+    className="wg-doc-image"
+  />
+
+  <p className="wg-image-caption">
+    Policy timeline showing multiple attendance policies applied during a payroll period.
+  </p>
+</div>
       <hr className="wg-divider" />
 
       <div className="wg-section">

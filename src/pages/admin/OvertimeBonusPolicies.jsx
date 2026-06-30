@@ -134,7 +134,18 @@
 // src/pages/admin/OvertimeBonusPolicies.jsx
 
 import PageHeader from '../../components/PageHeader'
+import OvertimeManagImg from '../../assets/screenshots/OvertimeManag.png'
 
+import OverTimeFormImg from '../../assets/screenshots/OverTimeForm.png'
+
+import BonusManagementImg from '../../assets/screenshots/BonusManag.png'
+
+import BonusPolicyFormImg from '../../assets/screenshots/bonusform.png'
+
+import ExceptionalEntriesImg from '../../assets/screenshots/OvertimeExceptionalEntries.png'
+
+
+import ExceptionalBonusFormImg from '../../assets/screenshots/AddExceptionalBonusForm.png'
 export default function OvertimeBonusPolicies() {
   return (
     <>
@@ -143,7 +154,15 @@ export default function OvertimeBonusPolicies() {
         title="Overtime & Bonus Policies"
         description="Configure overtime rules and bonus policies. Both follow the same scope and priority structure, with an additional department level."
       />
+<img
+  src={OvertimeManagImg}
+  alt="Overtime Policies"
+  className="wg-doc-image"
+/>
 
+<p className="wg-image-caption">
+  Create and manage overtime policies with scope priority, overtime types, and monthly caps.
+</p>
       <div className="wg-section">
         <h2>Policy Scope &amp; Priority</h2>
         <div className="wg-table-wrap">
@@ -180,7 +199,7 @@ export default function OvertimeBonusPolicies() {
               <tr><td>After Shift (Night)</td><td>Employee stayed later during nighttime hours</td><td>✅ Yes</td></tr>
               <tr><td>Public Holiday</td><td>Employee worked on a declared public holiday</td><td>✅ Yes</td></tr>
               <tr><td>Day Off</td><td>Employee worked on their scheduled day off</td><td>✅ Yes</td></tr>
-              <tr><td>Exceptional</td><td>Manually entered by an admin (one-time)</td><td>❌ No — always paid in full</td></tr>
+              {/* <tr><td>Exceptional</td><td>Manually entered by an admin (one-time)</td><td>❌ No — always paid in full</td></tr> */}
             </tbody>
           </table>
         </div>
@@ -203,6 +222,15 @@ export default function OvertimeBonusPolicies() {
             </tbody>
           </table>
         </div>
+        <img
+  src={OverTimeFormImg}
+  alt="Overtime Policy Form"
+  className="wg-doc-image--narrow"
+/>
+
+<p className="wg-image-caption">
+  Configure overtime rules, multipliers, fixed rates, night shift window, and monthly overtime caps.
+</p>
       </div>
 
       <hr className="wg-divider" />
@@ -259,7 +287,7 @@ export default function OvertimeBonusPolicies() {
         </div>
         <div className="wg-callout wg-callout--tip">
           <span className="wg-callout__icon">📌</span>
-          <div>Exceptional (manually added) overtime is <strong>never capped</strong> — it's always paid in full.</div>
+          <div>Exceptional bonuses (manually added) are never affected by the monthly overtime cap because they are bonus entries, not overtime.</div>
         </div>
       </div>
 
@@ -268,6 +296,16 @@ export default function OvertimeBonusPolicies() {
       <div className="wg-section">
         <h2>Bonus Policy Scope &amp; Priority</h2>
         <p>Bonus policies follow the same scope and priority as overtime policies (Company → Branch → Department → Role → Individual). The same multi-branch and multi-department rules apply.</p>
+
+        <img
+  src={BonusManagementImg}
+  alt="Bonus Policies"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+  Manage attendance bonuses and fixed monthly bonus policies using the same priority hierarchy.
+</p>
       </div>
 
       <hr className="wg-divider" />
@@ -313,6 +351,15 @@ export default function OvertimeBonusPolicies() {
           <span className="wg-callout__icon">📌</span>
           <div>Enter the percentage as a plain number (e.g. enter <code>5</code> for 5%). The system handles the division automatically. This is different from deduction rates which use decimal fractions like <code>0.02</code>.</div>
         </div>
+        <img
+  src={BonusPolicyFormImg}
+  alt="Bonus Policy Form"
+  className="wg-doc-image--narrow"
+/>
+
+<p className="wg-image-caption">
+  Configure attendance bonus conditions and fixed monthly bonus rewards.
+</p>
       </div>
 
       <hr className="wg-divider" />
@@ -330,6 +377,8 @@ export default function OvertimeBonusPolicies() {
           </table>
         </div>
         <p>The amount can be a fixed value or a percentage of base salary — same calculation as the attendance bonus reward.</p>
+
+        
       </div>
 
       <hr className="wg-divider" />
@@ -342,6 +391,30 @@ export default function OvertimeBonusPolicies() {
           <li><span className="wg-priority-num">→</span><div>Are <strong>always paid in full</strong> — never subject to the monthly overtime cap</div></li>
           <li><span className="wg-priority-num">→</span><div>Can include a note explaining the reason</div></li>
         </ul>
+
+      <div className="wg-callout wg-callout--tip">
+          <span className="wg-callout__icon">💡</span>  <div>
+Exceptional bonuses are created manually by administrators and are independent from bonus policies. They are intended for one-time rewards such as outstanding performance or special achievements.</div></div>
+        <img
+  src={ExceptionalEntriesImg}
+  alt="Exceptional Entries"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+  View auto-generated overtime alongside manually added exceptional bonuses.
+</p>
+<div className='img-small'>
+<img
+  src={ExceptionalBonusFormImg}
+  alt="Add Exceptional Bonus"
+  className="wg-doc-image"
+/>
+</div>
+<p className="wg-image-caption">
+  Manually grant a one-time exceptional bonus with an amount and reason.
+</p>
+
       </div>
 
       <hr className="wg-divider" />

@@ -2,6 +2,22 @@
 // import DocsLayout from '../../layouts/DocsLayout'
 import PageHeader from '../../components/PageHeader'
 
+import
+SubmitLeaveRequestImg from '../../assets/screenshots/Submit-LeaveRequest.png'
+
+import
+Empleavedetails from '../../assets/screenshots/Empleavedetails.png'
+
+// import
+// LeaveProfileReqImg from '../../assets/screenshots/Leave-Profile-req.png'
+
+import
+EmpLeaveBalance from '../../assets/screenshots/EmpLeaveBalance.png'
+
+
+import
+MyLeaves from '../../assets/screenshots/myleaves.png'
+
 export default function Leaves() {
   return (
     <>
@@ -10,7 +26,15 @@ export default function Leaves() {
         title="Leave Requests"
         description="How to submit, track, and cancel your leave requests in WorkGuard."
       />
+<img
+  src={MyLeaves}
+  alt="My Leaves Page"
+   className="wg-doc-image--narrow"
+/>
 
+<p className="wg-image-caption">
+  My Leaves page displays your leave requests, their statuses, and the form for submitting new requests.
+</p>
       <div className="wg-section">
         <h2>Leave Types</h2>
         <div className="wg-table-wrap">
@@ -34,6 +58,16 @@ export default function Leaves() {
           <span className="wg-callout__icon">💡</span>
           <div>You can only submit leave for <strong>future dates</strong>. If you need leave for a past date, ask your administrator.</div>
         </div>
+
+        <img
+  src={SubmitLeaveRequestImg}
+  alt="Submit Leave Request"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+  Use this form to submit a new leave request.
+</p>
       </div>
 
       <hr className="wg-divider" />
@@ -54,7 +88,34 @@ export default function Leaves() {
       </div>
 
       <hr className="wg-divider" />
+<div className="wg-section">
+  <h2>Request Processing</h2>
 
+  <ul className="wg-priority-list">
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        Approved leave automatically updates your attendance records.
+      </div>
+    </li>
+
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        Paid leave days are deducted automatically from your balance.
+      </div>
+    </li>
+
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        Public holidays and weekends are excluded from leave calculations.
+      </div>
+    </li>
+  </ul>
+</div>
+
+<hr className="wg-divider" />
       <div className="wg-section">
         <h2>Cancelling a Request</h2>
         <p>You can cancel a <strong>pending</strong> leave request yourself at any time — no balance change occurs. For <strong>approved</strong> leave, only an admin can cancel it (and only for future dates).</p>
@@ -62,9 +123,65 @@ export default function Leaves() {
 
       <hr className="wg-divider" />
 
+<div className="wg-section">
+  <h2>Leave History</h2>
+
+  <p>
+    You can review all previous leave requests from your profile,
+    including request dates, statuses, working days, and details.
+  </p>
+
+  <div className="wg-callout wg-callout--tip">
+    <span className="wg-callout__icon">💡</span>
+    <div>
+      Leave history can be filtered by year to quickly find
+      previous requests.
+    </div>
+  </div>
+
+   <img
+      src={Empleavedetails}
+      alt="Employee Leave History"
+      className="wg-doc-image"
+    />
+  
+   <p className="wg-image-caption">
+     The Leave Details page displays request information, decision details, and daily leave records.
+  </p>
+</div>
+
+<hr className="wg-divider" />
+
       <div className="wg-section">
         <h2>Your Leave Balances</h2>
         <p>Your current leave balances are always visible in your profile. When a paid leave request is approved, the days are automatically deducted from your balance.</p>
+
+        <ul className="wg-priority-list">
+  <li>
+    <span className="wg-priority-num">→</span>
+    <div>Annual leave balance</div>
+  </li>
+
+  <li>
+    <span className="wg-priority-num">→</span>
+    <div>Sick leave balance</div>
+  </li>
+
+  <li>
+    <span className="wg-priority-num">→</span>
+    <div>Unpaid leave days</div>
+  </li>
+</ul>
+
+      <img
+  src={EmpLeaveBalance}
+  alt="Employee Leave Balance"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+  Your leave profile displays yearly balances, usage statistics, and leave history.
+</p>
         <div className="wg-callout wg-callout--tip">
           <span className="wg-callout__icon">💡</span>
           <div>Leave balances reset on <strong>January 1</strong> each year. Unused annual leave is carried over up to the limit set by your company. Sick leave resets fully — unused sick days don't carry over.</div>

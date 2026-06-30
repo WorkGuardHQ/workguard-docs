@@ -31,11 +31,12 @@ export default function SSOLogin() {
         const redirect =
           params.get("redirect");
 
-        navigate(
-          redirect ||
-          "/public/overview"
-        );
-
+        // navigate(
+        //   redirect ||
+        //   "/public/overview"
+        // );
+window.location.href =
+  redirect || "/public/overview";
       } catch (err) {
 
         navigate("/public/overview");

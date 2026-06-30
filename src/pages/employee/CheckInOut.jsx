@@ -104,6 +104,11 @@
 
 import PageHeader from '../../components/PageHeader'
 
+import CheckInOutImg from '../../assets/screenshots/check-in-out.png'
+
+
+ import AttendanceDetails 
+ from '../../assets/screenshots/EmpAtt-details-profile.png'
 export default function CheckInOut() {
   return (
     <>
@@ -112,17 +117,38 @@ export default function CheckInOut() {
         title="Check In & Check Out"
         description="How to record your daily attendance using the WorkGuard app."
       />
-
+<div className="wg-side-image__content">
       <div className="wg-section">
-        <h2>Checking In</h2>
-        <ol className="wg-steps">
-          <li>Open the WorkGuard app and select your branch</li>
-          <li>Make sure your GPS is enabled and you have a good signal</li>
-          <li>Tap <strong>Check In</strong> — the app verifies your device and location</li>
-          <li>If everything passes, your attendance is recorded immediately</li>
-        </ol>
-      </div>
+        <div className="wg-section">
+  <h2>Checking In</h2>
 
+  <div className="wg-side-image">
+
+    <div className="wg-side-image__content">
+      <ol className="wg-steps">
+        <li>Open the WorkGuard app and select your branch</li>
+        <li>Make sure your GPS is enabled and you have a good signal</li>
+        <li>Tap <strong>Check In</strong> — the app verifies your device and location</li>
+        <li>If everything passes, your attendance is recorded immediately</li>
+      </ol>
+    </div>
+
+    <div className="wg-side-image__image">
+      <img
+        src={CheckInOutImg}
+        alt="Employee check in and check out screen"
+        className="wg-doc-image"
+      />
+
+      <p className="wg-image-caption">
+        Employee attendance check-in and check-out screen.
+      </p>
+    </div>
+
+  </div>
+</div>
+  </div>
+</div>
       <hr className="wg-divider" />
 
       <div className="wg-section">
@@ -148,6 +174,14 @@ export default function CheckInOut() {
       <div className="wg-section">
         <h2>Checking Out</h2>
         <p>When you check out, WorkGuard records your total time worked, any early departure, and updates your attendance summary for the day automatically.</p>
+
+
+        <div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">💡</span>
+  <div>
+    Your attendance summary is updated automatically immediately after checkout.
+  </div>
+</div>
         <div className="wg-callout wg-callout--warning">
           <span className="wg-callout__icon">⚠️</span>
           <div>Always check out at the end of your shift. If you haven't checked out before your shift end time plus a short grace period, you'll receive a <strong>reminder email</strong>. If you still don't check out, the system will automatically close and invalidate your record — and you'll receive a warning email.</div>
@@ -198,6 +232,17 @@ export default function CheckInOut() {
           </table>
         </div>
         <p>Whether these generate overtime pay depends on your company's overtime policy. Contact your manager or check your monthly report to see if overtime was applied.</p>
+
+<div className='img-small'>
+        <img
+  src={AttendanceDetails}
+  alt="Attendance Details"
+  className="wg-doc-image"
+/>
+</div>
+<p className="wg-image-caption">
+  Daily attendance details including worked hours, lateness, overtime, and deductions.
+</p>
       </div>
 
       <hr className="wg-divider" />

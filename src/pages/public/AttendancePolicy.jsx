@@ -83,6 +83,8 @@
 
 import PageHeader from '../../components/PageHeader'
 
+import AttendancePoliciesList
+  from '../../assets/screenshots/Attendance-Policies.png'
 export default function AttendancePolicy() {
   return (
     <>
@@ -91,7 +93,15 @@ export default function AttendancePolicy() {
         title="Attendance Policy"
         description="Attendance Policies define how grace periods and deductions are applied. Policies can be set at the company, branch, role, or individual employee level — the most specific one always applies."
       />
+<img
+  src={AttendancePoliciesList}
+  alt="Attendance Policies"
+  className="wg-doc-image"
+/>
 
+<p className="wg-image-caption">
+  Attendance policies define how attendance deductions, grace periods, and absence rules are applied.
+</p>
       <div className="wg-section">
         <h2>Policy Scope &amp; Priority</h2>
         <p>When multiple policies could apply to an employee, the most specific one always wins:</p>
@@ -133,8 +143,46 @@ export default function AttendancePolicy() {
 
       <div className="wg-section">
         <h2>Attendance Deductions</h2>
-        <p>WorkGuard automatically calculates attendance deductions according to your organization's active attendance policies. Organizations can configure deduction rules for late arrivals, early departures, absence, excess break time, and inter-branch transit time.</p>
-        <p>All deduction calculations are applied automatically and reflected in payroll reports.</p>
+        {/* <p>WorkGuard automatically calculates attendance deductions according to your organization's active attendance policies. Organizations can configure deduction rules for late arrivals, early departures, absence, excess break time, and inter-branch transit time.</p>
+        <p>All deduction calculations are applied automatically and reflected in payroll reports.</p> */}
+
+        <div className="wg-table-wrap">
+  <table className="wg-table">
+    <thead>
+      <tr>
+        <th>Deduction Type</th>
+        <th>When It Applies</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Late Arrival</td>
+        <td>Arriving after the grace period</td>
+      </tr>
+
+      <tr>
+        <td>Early Leave</td>
+        <td>Leaving before shift end beyond the grace period</td>
+      </tr>
+
+      <tr>
+        <td>Break Deduction</td>
+        <td>Exceeding the allowed daily break time</td>
+      </tr>
+
+      <tr>
+        <td>Transit Deduction</td>
+        <td>Exceeding allowed travel time between branches</td>
+      </tr>
+
+      <tr>
+        <td>Absence Deduction</td>
+        <td>Missing a working day without approved leave</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
       </div>
 
       <hr className="wg-divider" />
@@ -171,7 +219,38 @@ export default function AttendancePolicy() {
       <div className="wg-section">
         <h2>Policy Lifecycle</h2>
         <p>Attendance policies can be activated, updated, or replaced over time. WorkGuard automatically ensures the correct policy is applied when calculating attendance and payroll. Historical records remain accurate even when policies change — each daily record stores a snapshot of exactly which policy applied on that day.</p>
+        <div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">💡</span>
+  <div>
+    Historical attendance and payroll records always remain accurate even if attendance policies are modified later.
+  </div>
+</div>
       </div>
+
+      <div className="wg-section">
+  <h2>Historical Accuracy</h2>
+
+  <p>
+    Every attendance record stores the exact policy that was active when the attendance was calculated.
+  </p>
+
+  <ul className="wg-priority-list">
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        Changing policies does not affect previously calculated attendance records.
+      </div>
+    </li>
+
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        Payroll calculations always remain historically accurate.
+      </div>
+    </li>
+  </ul>
+</div>
+
     </>
   )
 }

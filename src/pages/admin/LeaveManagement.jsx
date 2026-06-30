@@ -132,7 +132,31 @@
 // src/pages/admin/LeaveManagement.jsx
 
 import PageHeader from '../../components/PageHeader'
+import LeaveReqManagementImg from '../../assets/screenshots/LeaveReqManag.png'
 
+
+import
+LeavePolicyImg from '../../assets/screenshots/leave-policy.png'
+
+import
+SubmitLeaveRequestImg from '../../assets/screenshots/Submit-LeaveRequest.png'
+
+
+import
+LeaveProfileImg from '../../assets/screenshots/Leave-Profile.png'
+
+import
+LeaveProfileReqImg from '../../assets/screenshots/Leave-Profile-req.png'
+
+import
+ManualResetImg from '../../assets/screenshots/ManuallyResetYearlyLeave.png'
+
+import
+AdjustBalanceForm from '../../assets/screenshots/Adjust-Balance.png'
+
+
+import
+leavedetails from '../../assets/screenshots/leave-details.png'
 export default function LeaveManagement() {
   return (
     <>
@@ -141,7 +165,15 @@ export default function LeaveManagement() {
         title="Leave Management"
         description="Manage the full leave lifecycle — approval, rejection, and cancellation — with automatic balance tracking and payroll integration."
       />
+<img
+  src={LeaveReqManagementImg}
+  alt="Leave Requests Management"
+   className="wg-doc-image--narrow"
+/>
 
+<p className="wg-image-caption">
+  Review, approve, reject, or cancel employee leave requests.
+</p>
       <div className="wg-section">
         <h2>Leave Types</h2>
         <div className="wg-table-wrap">
@@ -174,7 +206,10 @@ export default function LeaveManagement() {
         <div className="wg-callout wg-callout--tip">
           <span className="wg-callout__icon">📌</span>
           <div>Employees assigned to multiple branches are not subject to branch-level leave policies.</div>
-        </div>
+ </div>
+  
+
+       
 
         <h3>Leave Policy Settings</h3>
         <div className="wg-table-wrap">
@@ -188,7 +223,17 @@ export default function LeaveManagement() {
               <tr><td>Carryover limit</td><td>Maximum unused annual days that roll over to the next year</td></tr>
             </tbody>
           </table>
+          
         </div>
+                <img
+  src={LeavePolicyImg}
+  alt="Leave Policies"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+  Configure leave policies at the company, branch, role, or employee level.
+</p>
       </div>
 
       <hr className="wg-divider" />
@@ -208,6 +253,16 @@ export default function LeaveManagement() {
           <span className="wg-callout__icon">📌</span>
           <div>Admins can submit leave for <strong>past dates</strong>. Employees can only submit future leave.</div>
         </div>
+        <img
+  src={SubmitLeaveRequestImg}
+  alt="Submit Leave Request"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+  Employees and administrators can submit leave requests using the leave request form.
+</p>
+
       </div>
 
       <hr className="wg-divider" />
@@ -251,6 +306,17 @@ export default function LeaveManagement() {
           <li>Days from that date onward are cancelled and balance is restored</li>
           <li>If the period includes payroll-locked days, an additional confirmation is required</li>
         </ol>
+
+        
+<img
+  src={leavedetails}
+  alt="leave details"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+  Review leave details, cancellation information, and balance restoration before confirming changes.
+</p>
       </div>
 
       <hr className="wg-divider" />
@@ -273,10 +339,49 @@ export default function LeaveManagement() {
             </tbody>
           </table>
         </div>
+        <img
+  src={LeaveProfileImg}
+  alt="Employee Leave Profile"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+  Employee leave profiles display yearly balances, usage statistics, and leave history.
+</p>
+
+<div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">📌</span>
+  <div>
+    Manual balance adjustments and adjustment history are visible to administrators only.
+  </div>
+</div>
       </div>
 
       <hr className="wg-divider" />
+<div className="wg-section">
+  <h2>Employee Leave History</h2>
 
+<p>
+  Employees and administrators can review leave history,
+  including request details, statuses, working days, and timezones.
+</p>
+
+  <p>
+    Leave history can be filtered by year and month for easier auditing.
+  </p>
+
+  <img
+    src={LeaveProfileReqImg}
+    alt="Employee Leave History"
+    className="wg-doc-image"
+  />
+
+ <p className="wg-image-caption">
+  Leave history can be reviewed and filtered by year and month.
+</p>
+</div>
+
+ <hr className="wg-divider" />
       <div className="wg-section">
         <h2>Yearly Leave Reset</h2>
         <p>On <strong>January 1</strong> each year, leave balances are automatically reset:</p>
@@ -292,8 +397,32 @@ export default function LeaveManagement() {
         </div>
         <p>A <strong>preview</strong> is available before the reset runs — showing exactly what each employee's new balance will be.</p>
 
+
+<img
+  src={ManualResetImg}
+  alt="Yearly Leave Reset"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+  Preview yearly leave recalculation before applying the reset.
+</p>
+
+ 
         <h3>Manual Balance Adjustment</h3>
         <p>Admins can manually add to, deduct from, or set an employee's leave balance at any time. All manual adjustments are recorded with the admin's name, timestamp, and a required reason.</p>
+
+        
+<img
+  src={AdjustBalanceForm}
+  alt="AdjustBalanceForm"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+  Manual Balance Adjustment Form in the Employee Profile Page.
+</p>
+
       </div>
     </>
   )

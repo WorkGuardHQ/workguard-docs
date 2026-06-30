@@ -112,7 +112,7 @@ export default function OvertimeBonus() {
               <tr><td>After Shift (Night)</td><td>Employee stayed late during nighttime hours</td></tr>
               <tr><td>Public Holiday</td><td>Employee worked on a declared holiday</td></tr>
               <tr><td>Day Off</td><td>Employee worked on their scheduled day off</td></tr>
-              <tr><td>Exceptional</td><td>Manually added one-time by an admin</td></tr>
+              {/* <tr><td>Exceptional</td><td>Manually added one-time by an admin</td></tr> */}
             </tbody>
           </table>
         </div>
@@ -198,17 +198,54 @@ export default function OvertimeBonus() {
           <span className="wg-callout__icon">⚠️</span>
           <div>The absence condition defaults to <strong>0</strong> if left unset — meaning the employee must have zero absences. Set it explicitly if you want to allow some absences.</div>
         </div>
-        <p><strong>Reward options:</strong> Fixed amount (e.g. 500 EGP) or percentage of salary (e.g. enter <code>5</code> for 5%). WorkGuard handles the calculation automatically.</p>
+        {/* <p><strong>Reward options:</strong> Fixed amount (e.g. 500 EGP) or percentage of salary (e.g. enter <code>5</code> for 5%). WorkGuard handles the calculation automatically.</p> */}
+<h3>Reward Options</h3>
 
+<div className="wg-table-wrap">
+<table className="wg-table">
+<thead>
+<tr>
+<th>Method</th>
+<th>Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Fixed amount</td>
+<td>500 EGP</td>
+</tr>
+
+<tr>
+<td>Percentage of salary</td>
+<td>5 = 5% of base salary</td>
+</tr>
+</tbody>
+</table>
+</div>
         <h3>Fixed Monthly Bonus</h3>
         <p>A recurring monthly bonus with two trigger options:</p>
         <ul className="wg-priority-list">
           <li><span className="wg-priority-num">→</span><div><strong>Always</strong> — paid every month regardless of attendance</div></li>
           <li><span className="wg-priority-num">→</span><div><strong>Active employees only</strong> — only paid if the employee had zero unpaid leave days that month</div></li>
         </ul>
+<h3>Exceptional Bonus</h3>
 
-        <h3>Exceptional Bonus</h3>
-        <p>A one-time, manually entered bonus added by an admin. Always paid in full — never subject to the monthly overtime cap.</p>
+<p>
+Exceptional bonuses are one-time rewards granted manually by an administrator.
+They are commonly used to reward
+special achievements or outstanding performance.
+</p>
+
+<div className="wg-callout wg-callout--tip">
+<span className="wg-callout__icon">📌</span>
+<div>
+Exceptional bonuses are always paid in full and are never affected by
+monthly overtime caps.
+</div>
+</div>
+        {/* <h3>Exceptional Bonus</h3>
+        <p>A one-time, manually entered bonus added by an admin. Always paid in full — never subject to the monthly overtime cap.</p> */}
       </div>
     </>
   )

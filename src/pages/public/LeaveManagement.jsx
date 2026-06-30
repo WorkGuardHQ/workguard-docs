@@ -1,5 +1,5 @@
 // src/pages/public/LeaveManagement.jsx
-// import DocsLayout from '../../layouts/DocsLayout'
+
 import PageHeader from '../../components/PageHeader'
 
 export default function LeaveManagement() {
@@ -41,6 +41,13 @@ export default function LeaveManagement() {
             </tbody>
           </table>
         </div>
+        <div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">📌</span>
+ <div>
+  Leave policies can be configured at the company, branch,
+  role, or individual employee level.
+</div>
+</div>
       </div>
 
       <hr className="wg-divider" />
@@ -64,8 +71,14 @@ export default function LeaveManagement() {
       <hr className="wg-divider" />
 
       <div className="wg-section">
-        <h2>Approving Leave</h2>
-        <p>When an admin approves a leave request, balance is deducted automatically and the employee's attendance summary is updated for each affected day. If balance runs out partway through the period, remaining days become unpaid (if allowed by policy). Payroll-locked days require admin confirmation before proceeding.</p>
+        <h2>Leave Approval Workflow</h2>
+        {/* <p>When an admin approves a leave request, balance is deducted automatically and the employee's attendance summary is updated for each affected day. If balance runs out partway through the period, remaining days become unpaid (if allowed by policy). Payroll-locked days require admin confirmation before proceeding.</p> */}
+
+        <p>
+  Submitted leave requests are reviewed by administrators.
+  Once approved, leave balances and attendance records are
+  updated automatically.
+</p>
       </div>
 
       <hr className="wg-divider" />
@@ -81,19 +94,32 @@ export default function LeaveManagement() {
         <h2>Cancelling Leave</h2>
         <p><strong>Pending requests</strong> can be cancelled by either the employee or an admin with no balance change.</p>
         <p><strong>Approved leave</strong> can be partially cancelled by an admin by specifying a cancel-from date. Days before that date remain approved. Days from that date onward are cancelled and balance is restored. A preview is available before committing.</p>
+
+        <div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">💡</span>
+  <div>
+    WorkGuard supports partial leave cancellation while
+    preserving historical attendance records.
+  </div>
+</div>
       </div>
 
       <hr className="wg-divider" />
 
       <div className="wg-section">
-        <h2>Leave Balances</h2>
+        <h2>Leave Balance Tracking</h2>
+        <p>Each employee's leave balance is tracked per year and updated automatically:</p>
         <div className="wg-table-wrap">
           <table className="wg-table">
             <thead><tr><th>Balance</th><th>Description</th></tr></thead>
             <tbody>
-              <tr><td>Annual remaining</td><td>Annual days available minus days used</td></tr>
-              <tr><td>Sick remaining</td><td>Sick days available minus days used</td></tr>
-              <tr><td>Absent days</td><td>Days marked absent without permission</td></tr>
+              <tr><td>Annual total</td><td>Total annual days available (including carryover from last year)</td></tr>
+              <tr><td>Annual used</td><td>Paid annual days already taken</td></tr>
+              <tr><td>Annual remaining</td><td>Available annual days left</td></tr>
+              <tr><td>Sick total</td><td>Total sick days allocated</td></tr>
+              <tr><td>Sick used</td><td>Sick days already taken</td></tr>
+              <tr><td>Sick remaining</td><td>Available sick days left</td></tr>
+              <tr><td>Absent days</td><td>Days marked absent without permission (updated automatically)</td></tr>
               <tr><td>Unpaid leave days</td><td>Days on approved unpaid leave</td></tr>
             </tbody>
           </table>
@@ -105,7 +131,10 @@ export default function LeaveManagement() {
       <div className="wg-section">
         <h2>Yearly Leave Reset</h2>
         <p>On <strong>January 1</strong> each year, WorkGuard automatically resets leave balances: unused annual leave is carried over up to the configured limit, sick leave resets to the full annual allocation, and used-day counters are cleared. A preview of the reset is available before it runs.</p>
-        <p>Admins can also manually adjust any employee's leave balance at any time. All adjustments are logged with the admin's name, timestamp, and reason.</p>
+       <p>
+  Organizations can manually adjust employee leave balances
+when exceptional situations require it.
+</p>
       </div>
     </>
   )

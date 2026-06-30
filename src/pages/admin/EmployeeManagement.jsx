@@ -2,6 +2,19 @@
 
 import PageHeader from '../../components/PageHeader'
 
+import addEmployeeImg from '../../assets/screenshots/add-emp (2).png'
+
+import employeeDirectoryImg from '../../assets/screenshots/employeeDirectoryImg.png'
+
+import EmpStatus from '../../assets/screenshots/emp-status.png'
+
+import changestatus from '../../assets/screenshots/change-emp-status.png'
+import Biometrics from '../../assets/screenshots/Biometrics.png'
+
+import AdminRoles from '../../assets/screenshots/userrole-profile.png'
+
+import EmployeeProfileImg from '../../assets/screenshots/profile-.png'
+
 export default function EmployeeManagement() {
   return (
     <>
@@ -13,6 +26,16 @@ export default function EmployeeManagement() {
 
       <div className="wg-section">
         <h2>Employee Profile Fields</h2>
+
+ <img
+  src={addEmployeeImg}
+  alt="Add Employee Form"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+  Employee profile form showing personal information, assignments, work schedule, salary, and permissions.
+</p>
 
         <h3>Identity &amp; Contact</h3>
         <div className="wg-table-wrap">
@@ -57,18 +80,31 @@ export default function EmployeeManagement() {
             </tbody>
           </table>
         </div>
+
+
+        
         <div className="wg-callout wg-callout--tip">
           <span className="wg-callout__icon">📌</span>
           <div>An employee can be assigned to more than one branch or department. However, multi-branch employees have some policy restrictions — they are not subject to branch-level attendance, leave, or overtime policies.</div>
-        </div>
 
+          
+        </div>
+<img
+  src={employeeDirectoryImg}
+  alt="Employee Directory"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+  Employee Directory showing employee accounts, filters, statuses, and actions.
+</p>
         <h3>Salary &amp; Permissions</h3>
         <div className="wg-table-wrap">
           <table className="wg-table">
             <thead><tr><th>Field</th><th>Description</th></tr></thead>
             <tbody>
               <tr><td>Base Salary</td><td>Monthly base salary — used for all payroll calculations</td></tr>
-              <tr><td>Allow Remote Absence</td><td>Allows the employee to self-report an absence from anywhere</td></tr>
+              {/* <tr><td>Allow Remote Absence</td><td>Allows the employee to self-report an absence from anywhere</td></tr> */}
               <tr><td>Personal Transit Time</td><td>Custom travel time allowance between branches (overrides company default)</td></tr>
               <tr><td>Require Biometrics</td><td>If enabled, employee must complete biometric verification at each check-in and check-out</td></tr>
             </tbody>
@@ -100,6 +136,16 @@ export default function EmployeeManagement() {
             </div>
           </div>
         </div>
+
+<img
+  src={AdminRoles}
+  alt="Admin Roles"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+Admin permissions and scope settings configured from the employee profile.
+</p>
       </div>
 
       <hr className="wg-divider" />
@@ -117,7 +163,43 @@ export default function EmployeeManagement() {
             </tbody>
           </table>
         </div>
-        <p>When an employee is marked as resigned or terminated, their employment end date is recorded automatically and their access is revoked. Attendance records are only generated for days within an active employment period.</p>
+        <p>When an employee is marked as resigned or terminated, their employment end date is recorded automatically and their access is revoked. When an employee is <strong>rehired</strong>, a new active period starts and they can use the system again. Attendance records are only generated for days that fall within an active employment period. Days outside this range are automatically shown as "No Data."</p>
+        <div className='img-small'>
+        
+          <div>
+            <img
+              src={EmpStatus}
+              alt="Employment Status"
+              className="wg-doc-image"
+            />
+        
+            <p className="wg-image-caption">
+              Complete employment status history for an employee.
+            </p>
+          </div>
+        
+          <div>
+            <img
+              src={changestatus}
+              alt="Change Employment Status"
+              className="wg-doc-image"
+            />
+        
+            <p className="wg-image-caption">
+              Admin changing an employee's employment status from the employee profile.
+            </p>
+          </div></div>
+      </div>
+
+      <hr className="wg-divider" />
+
+      <div className="wg-section">
+        <h2>Working Days Per Month</h2>
+        <p>WorkGuard calculates how many working days an employee has in each month <strong>dynamically</strong>, based on their configured working days list (e.g. Monday through Friday).</p>
+        <div className="wg-callout wg-callout--tip">
+          <span className="wg-callout__icon">📌</span>
+          <div><strong>Example:</strong> If an employee works Monday–Friday and the current month has 23 such weekdays, their expected working days = 23, and their daily salary = base salary ÷ 23. This ensures salary calculations are always accurate regardless of how many weekdays fall in each month.</div>
+        </div>
       </div>
 
       <hr className="wg-divider" />
@@ -145,7 +227,7 @@ export default function EmployeeManagement() {
         </ol>
         <div className="wg-callout wg-callout--tip">
           <span className="wg-callout__icon">💡</span>
-          <div>If the link expires, you can resend the activation email from the employee's profile page.</div>
+          <div>If the link expires, you can resend the activation email from the Employee Directory page.</div>
         </div>
       </div>
 
@@ -153,7 +235,60 @@ export default function EmployeeManagement() {
 
       <div className="wg-section">
         <h2>Biometric Management</h2>
-        <p>If biometric verification is enabled for an employee, you can reset their biometric data from their profile. The employee will be prompted to re-register on their next check-in. All biometric resets are logged automatically.</p>
+        {/* <p>If biometric verification is enabled for an employee, you can reset their biometric data from their profile. The employee will be prompted to re-register on their next check-in. All biometric resets are logged automatically.</p> */}
+        <p>When biometric verification is enabled, employees must complete biometric verification during every check-in and check-out. Admins can enable or disable this setting from the employee's profile.</p>
+
+        <div className='img-small'>
+            <img
+              src={Biometrics}
+              alt="Change Employment Status"
+              className="wg-doc-image"
+            />
+          </div>
+        
+            <p className="wg-image-caption">
+             Biometric verification settings configured from the employee profile.
+            </p>
+
+
+
+      </div>
+
+            <hr className="wg-divider" />
+
+      <div className="wg-section">
+        <h2>Employee Profile Overview</h2>
+
+        <p>
+          The employee profile page acts as a central workspace for managing
+          all employee-related information. Administrators can quickly review
+          personal details, attendance statistics, payroll information,
+          employment status, devices, and other employee records from a
+          single screen.
+        </p>
+
+        <img
+          src={EmployeeProfileImg}
+          alt="Employee Profile Overview"
+          className="wg-doc-image"
+        />
+
+        <p className="wg-image-caption">
+          Employee profile page showing personal information, attendance
+          overview, and employee management sections.
+        </p>
+
+        <div className="wg-callout wg-callout--tip">
+          <span className="wg-callout__icon">💡</span>
+          <div>
+            Some sections available on the employee profile page — such as
+            <strong> Payroll History</strong>,
+            <strong> Feedback &amp; Warnings</strong>,
+            <strong> Attendance Policies</strong>, and
+            <strong> Registered Devices</strong> — are explained in detail in
+            their dedicated documentation pages.
+          </div>
+        </div>
       </div>
     </>
   )

@@ -135,6 +135,7 @@
 
 import PageHeader from '../../components/PageHeader'
 
+import PayrollManagementImg from '../../assets/screenshots/runpayroll-manag.png'
 export default function Payroll() {
   return (
     <>
@@ -143,7 +144,16 @@ export default function Payroll() {
         title="Payroll"
         description="Calculate and approve monthly payroll for all employees. WorkGuard combines base salary with attendance deductions, overtime, and bonuses automatically."
       />
+<img
+  src={PayrollManagementImg}
+  alt="Payroll Runs Management"
+  className="wg-doc-image"
+/>
 
+<p className="wg-image-caption">
+  Generate, approve, and review payroll runs for employees using branch,
+  department, and status filters.
+</p>
       <div className="wg-section">
         <h2>What Goes Into Payroll</h2>
         <div className="wg-table-wrap">
@@ -220,7 +230,7 @@ export default function Payroll() {
             Total paid: <strong>500 EGP</strong>
           </div>
         </div>
-        <p>Manually added Exceptional overtime is always paid in full and is never reduced by the cap.</p>
+        <p>Manually added exceptional bonuses are never affected by the monthly overtime cap and are always paid in full.</p>
       </div>
 
       <hr className="wg-divider" />
@@ -236,6 +246,11 @@ export default function Payroll() {
             </tbody>
           </table>
         </div>
+        <p>
+  Approved payroll runs become read-only. Attendance records and payroll
+  calculations for that period are locked until the payroll is regenerated
+  before approval or a new payroll period begins.
+</p>
       </div>
 
       <hr className="wg-divider" />
@@ -269,10 +284,24 @@ export default function Payroll() {
         </ul>
       </div>
 
+<hr className="wg-divider" />
+
+<div className="wg-section">
+  <h2>Generate Payroll for a Single Employee</h2>
+
+  <p>
+  Payroll can also be generated or approved directly from an employee's
+  profile instead of running payroll for the entire organization.
+  This is useful when reviewing, recalculating, or approving payroll
+  for a single employee without affecting anyone else.
+</p>
+</div>
       <hr className="wg-divider" />
 
       <div className="wg-section">
         <h2>Policy Audit Trail</h2>
+
+
         <p>Each payroll run includes a timeline of which attendance policies were in effect on different days throughout the month. This makes it easy to audit why a specific deduction was applied on a specific date.</p>
       </div>
     </>

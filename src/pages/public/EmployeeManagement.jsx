@@ -1,22 +1,17 @@
-// import PageHeader from "../../components/PageHeader";
 
-// export default function EmployeeManagement() {
-//   return (
-//     <>
-//       <PageHeader
-//         title="Employee Management"
-//         description="Manage employee profiles, branches, departments, and permissions."
-//       />
-
-//       <p>Documentation content goes here...</p>
-//     </>
-//   );
-// }
 
 // src/pages/public/EmployeeManagement.jsx
 // import DocsLayout from '../../layouts/DocsLayout'
 import PageHeader from '../../components/PageHeader'
+import addEmployeeImg from '../../assets/screenshots/add-emp (2).png'
 
+import EmpStatus from '../../assets/screenshots/emp-status.png'
+
+import changestatus from '../../assets/screenshots/change-emp-status.png'
+
+import employeeDirectoryImg from '../../assets/screenshots/employeeDirectoryImg.png'
+
+import Biometrics from '../../assets/screenshots/Biometrics.png'
 export default function EmployeeManagement() {
   return (
     <>
@@ -29,7 +24,20 @@ export default function EmployeeManagement() {
 
       <div className="wg-section">
         <h2>Employee Profile</h2>
-        <p>When adding a new employee, you configure four areas of their profile.</p>
+<p>When adding a new employee, you configure four areas of their profile.</p>
+
+
+        <img
+  src={addEmployeeImg}
+  alt="Add Employee Form"
+   className="wg-doc-image--narrow"
+/>
+
+<p className="wg-image-caption">
+  Employee profile form showing personal information, assignments, work schedule, salary, and permissions.
+</p>
+
+        
 
         <h3>Basic Information</h3>
         <div className="wg-table-wrap">
@@ -71,18 +79,44 @@ export default function EmployeeManagement() {
               <tr><td>Base Salary</td><td>Monthly base salary used for all payroll calculations</td></tr>
             </tbody>
           </table>
+          
         </div>
+
+<img
+  src={employeeDirectoryImg}
+  alt="Employee Directory"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+ Employee Directory displaying employee records, roles, assigned branches, and account status.
+</p>
+
 
         <h3>Permissions</h3>
         <div className="wg-table-wrap">
           <table className="wg-table">
             <thead><tr><th>Setting</th><th>Description</th></tr></thead>
             <tbody>
-              <tr><td>Remote Absence</td><td>Allows the employee to self-report an absence from any location</td></tr>
+              {/* <tr>
+                <td>Remote Absence</td><td>Allows the employee to self-report an absence from any location</td></tr> */}
               <tr><td>Biometric Verification</td><td>Requires biometric check on every check-in and check-out</td></tr>
             </tbody>
           </table>
+       
+
         </div>
+<div className='img-small'>
+    <img
+      src={Biometrics}
+      alt="Change Employment Status"
+      className="wg-doc-image"
+    />
+  </div>
+
+    <p className="wg-image-caption">
+      Biometric verification settings configured from the employee profile.
+    </p>
       </div>
 
       <hr className="wg-divider" />
@@ -117,6 +151,8 @@ export default function EmployeeManagement() {
       <div className="wg-section">
         <h2>Employment Status</h2>
         <p>WorkGuard tracks the full history of each employee's employment status. Attendance records are only generated for days when the employee has an <strong>Active</strong> status.</p>
+
+      
         <div className="wg-table-wrap">
           <table className="wg-table">
             <thead><tr><th>Status</th><th>What It Means</th></tr></thead>
@@ -129,6 +165,34 @@ export default function EmployeeManagement() {
           </table>
         </div>
         <p>Days outside an active employment period are automatically shown as "No Data" — they never count as absences.</p>
+<div className='img-small'>
+
+  <div>
+    <img
+      src={EmpStatus}
+      alt="Employment Status"
+      className="wg-doc-image"
+    />
+
+    <p className="wg-image-caption">
+      Complete employment status history for an employee.
+    </p>
+  </div>
+
+  <div>
+    <img
+      src={changestatus}
+      alt="Change Employment Status"
+      className="wg-doc-image"
+    />
+
+    <p className="wg-image-caption">
+      Admin changing an employee's employment status from the employee profile.
+    </p>
+  </div>
+
+</div>
+
       </div>
 
       <hr className="wg-divider" />

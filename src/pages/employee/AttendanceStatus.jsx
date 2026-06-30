@@ -71,6 +71,9 @@
 
 import PageHeader from '../../components/PageHeader'
 
+import AttendanceTableprofile from '../../assets/screenshots/attendanc-profile.png'
+import AbsenceDetails from '../../assets/screenshots/Leave-Profile-absence.png'
+
 export default function AttendanceStatus() {
   return (
     <>
@@ -110,7 +113,19 @@ export default function AttendanceStatus() {
           <li><strong>Approved leave</strong> — do you have an approved leave request covering this day?</li>
           <li><strong>Attendance records</strong> — did you check in and out with valid records?</li>
         </ol>
-      </div>
+      
+
+
+   <img
+  src={AttendanceTableprofile}
+  alt="Attendance Details"
+  className="wg-doc-image"
+/>
+<p className="wg-image-caption">
+  Attendance history and daily status displayed in the employee profile.
+</p>
+</div>
+
 
       <hr className="wg-divider" />
 
@@ -118,6 +133,13 @@ export default function AttendanceStatus() {
         <h2>Late Arrival</h2>
         <p>Late minutes are calculated from your first valid check-in of the day. Your company's attendance policy includes a <strong>grace period</strong> — arriving within this window doesn't count as late and no deduction applies.</p>
         <p>If you're moving from one branch to another, WorkGuard accounts for the travel time between them before calculating any lateness.</p>
+
+        <div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">💡</span>
+  <div>
+    You can review your late minutes, deductions, and worked hours directly from your attendance details page.
+  </div>
+</div>
       </div>
 
       <hr className="wg-divider" />
@@ -134,6 +156,12 @@ export default function AttendanceStatus() {
         <p>Some attendance records are automatically flagged as invalid and don't count toward your working hours:</p>
         <ul className="wg-priority-list">
           <li><span className="wg-priority-num">→</span><div>Checking in after your shift has already ended</div></li>
+          <li>
+  <span className="wg-priority-num">→</span>
+  <div>
+    Missing checkout records that were automatically closed by the system
+  </div>
+</li>
           <li><span className="wg-priority-num">→</span><div>Records that don't overlap with your scheduled shift window</div></li>
           <li><span className="wg-priority-num">→</span><div>Records manually invalidated by an admin</div></li>
         </ul>
@@ -141,7 +169,54 @@ export default function AttendanceStatus() {
       </div>
 
       <hr className="wg-divider" />
+<div className="wg-section">
+  <h2>Absent Days</h2>
 
+  <p>
+    WorkGuard keeps track of all days marked as absence. You can filter your absence history by month and year to review every day counted as absent.
+  </p>
+
+  <ul className="wg-priority-list">
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>Filter absence records by month and year.</div>
+    </li>
+
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>Review all days that were counted as absences.</div>
+    </li>
+
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>Absence days are automatically calculated based on attendance records, leave requests, holidays, and working schedules.</div>
+    </li>
+  </ul>
+
+  <div className="wg-callout wg-callout--tip">
+    <span className="wg-callout__icon">💡</span>
+    <div>
+      If you believe an absence was recorded incorrectly, contact your administrator for review.
+    </div>
+  </div>
+
+<p>
+  The employee profile provides a complete history of all recorded absence days.
+</p>
+<img
+      src={AbsenceDetails}
+      alt="Employee absence details"
+      className="wg-doc-image"
+    />
+  
+
+    <p className="wg-image-caption">
+      Absence history and details displayed in the employee profile.
+    </p>
+
+</div> 
+
+<hr className="wg-divider" />
       <div className="wg-section">
         <h2>Working on a Holiday</h2>
         <p>If you check in on a declared holiday, your attendance is recorded and flagged for admin review. Holiday overtime rules may apply if your company has configured them.</p>

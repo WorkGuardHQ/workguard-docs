@@ -73,6 +73,7 @@ import useAuth from '../../hooks/useAuth'
 // import DocsLayout from '../../layouts/DocsLayout'
 import PageHeader from '../../components/PageHeader'
 
+import dashboardImg from '../../assets/screenshots/dashboard (2).png'
 const features = [
   { icon: '👥', title: 'Employee Management', desc: 'Complete employee profiles, roles, shifts, and lifecycle tracking.', path: '/public/employee-management' },
   { icon: '📍', title: 'Attendance Tracking', desc: 'GPS + device-based check-in with real-time status for every employee.', path: '/public/attendance' },
@@ -86,7 +87,8 @@ const features = [
   { icon: '⏱️', title: 'Overtime & Bonus', desc: 'Flexible overtime multipliers and three bonus policy types.', path: '/public/overtime-bonus' },
   { icon: '📊', title: 'Reports', desc: 'Employee and company reports exportable to PDF and Excel.', path: '/public/reports' },
   { icon: '🔒', title: 'Security', desc: 'Role-based access, biometrics, and encrypted credentials.', path: '/public/security' },
-   { icon: '📝', title: 'Feedback & Notes', desc: "Admins can add performance notes and formal warnings to an employee's profile. Notes can be kept internal or shared with the employee directly.", path: '/public/feedback' },
+   { icon: '📝', title: 'Feedback & Notes',   desc: 'Manage employee feedback, performance records, and formal warnings.',
+path: '/public/feedback' },
 ]
 
 export default function Overview() {
@@ -107,6 +109,10 @@ export default function Overview() {
 
       <div className="wg-section">
         <h2>What is WorkGuard?</h2>
+
+
+
+  
         <p>
           WorkGuard gives businesses everything they need to manage a distributed workforce. From the moment an employee is onboarded to their monthly payslip, every step is tracked, calculated, and auditable.
         </p>
@@ -114,6 +120,31 @@ export default function Overview() {
           The platform works through a mobile app that uses GPS and registered devices to verify attendance — no manual timesheets, no spreadsheets. Payroll is calculated automatically from real attendance data. Leave balances update instantly when requests are approved.
         </p>
       </div>
+
+
+
+
+  <div className="wg-section">
+  <p className="wg-section-subtitle">
+  See the main dashboard used by administrators to manage employees,
+  attendance, payroll, and company operations.
+</p>
+
+  <div className="wg-showcase">
+    <img
+      src={dashboardImg}
+      alt="WorkGuard Dashboard"
+      className="wg-doc-image"
+    />
+    <p className="wg-image-caption">
+  Main administrator dashboard showing quick actions,
+  employee management modules, payroll, attendance, and reports.
+</p>
+  </div>
+  
+</div>
+
+
 
       <div className="wg-section">
         <h2>Three Documentation Sections</h2>
