@@ -31,6 +31,7 @@
 // export default App;
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 
 import PublicRoutes from "./routes/PublicRoutes";
 import EmployeeRoutes from "./routes/EmployeeRoutes";
@@ -44,6 +45,9 @@ from "./pages/SSOLogin";
 function App() {
   return (
     <BrowserRouter>
+
+    <ScrollToTop />
+    
      {/* <AuthBridge /> */}
       <Routes>
 
