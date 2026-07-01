@@ -63,6 +63,9 @@
 
 import PageHeader from '../../components/PageHeader'
 
+import DepartmentManagementImg from '../../assets/screenshots/DepartmentManag.png'
+import CreateDepartmentFormImg from '../../assets/screenshots/CreateDepartmentForm.png'
+
 export default function DepartmentManagement() {
   return (
     <>
@@ -71,7 +74,16 @@ export default function DepartmentManagement() {
         title="Department Management"
         description="Departments are organizational units that group employees across one or more branches. They can be used to filter reports, payroll, and to apply overtime and bonus policies at the department level."
       />
+<img
+  src={DepartmentManagementImg}
+  alt="Department Management"
+  className="wg-doc-image"
+/>
 
+<p className="wg-image-caption">
+Manage company departments, assign managers, monitor employee counts,
+and activate or deactivate departments from a single dashboard.
+</p>
       <div className="wg-section">
         <h2>Department Settings</h2>
         <div className="wg-table-wrap">
@@ -83,9 +95,27 @@ export default function DepartmentManagement() {
               <tr><td>Branches</td><td>The branches this department is associated with</td></tr>
               <tr><td>Manager</td><td>An optional employee designated as the department manager</td></tr>
               <tr><td>Active / Inactive</td><td>Inactive departments are hidden from most views but employees remain assigned</td></tr>
+              <tr>
+  <td>Employee assignments</td>
+  <td>Employees are assigned separately after the department is created</td>
+</tr>
             </tbody>
           </table>
         </div>
+
+
+<div className="img-small">
+        <img
+  src={CreateDepartmentFormImg}
+  alt="Create Department"
+  className="wg-doc-image"
+/>
+</div>
+<p className="wg-image-caption">
+Create a new department by entering its basic information, assigning one or
+more branches, and optionally selecting a department manager.
+</p>
+
       </div>
 
       <hr className="wg-divider" />
@@ -100,6 +130,10 @@ export default function DepartmentManagement() {
               <tr><td>Report filtering</td><td>Company reports can be filtered to show only one department</td></tr>
               <tr><td>Payroll filtering</td><td>Bulk payroll generation and approval can be filtered by department</td></tr>
               <tr><td>Bulk operations</td><td>Bulk close open records and bulk recalculate can be filtered by department</td></tr>
+              <tr>
+  <td>Employee organization</td>
+  <td>Group employees for management, filtering, and reporting</td>
+</tr>
             </tbody>
           </table>
         </div>
@@ -109,7 +143,9 @@ export default function DepartmentManagement() {
 
       <div className="wg-section">
         <h2>Live Employee Count</h2>
-        <p>When viewing the departments list, each department shows a <strong>live count</strong> of currently active employees assigned to it.</p>
+        <p>The departments list displays the current number of active employees assigned
+to each department. The count updates automatically as employee assignments
+change.</p>
       </div>
 
       <hr className="wg-divider" />

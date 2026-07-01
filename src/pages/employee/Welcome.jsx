@@ -2,7 +2,8 @@
 import { Link } from 'react-router-dom'
 // import DocsLayout from '../../layouts/DocsLayout'
 import PageHeader from '../../components/PageHeader'
-
+import ActivateAccount
+ from '../../assets/screenshots/ActivateAccount.png'
 export default function Welcome() {
   return (
     <>
@@ -14,12 +15,31 @@ export default function Welcome() {
 
       <div className="wg-section">
         <h2>Setting Up Your Account</h2>
+
+        <div className="wg-side-image">
+  <div className="wg-side-image__content">
         <ol className="wg-steps">
           <li>Check your email for an activation link from WorkGuard</li>
           <li>Click the link (valid for 24 hours) and set your password</li>
           <li>Log in to the WorkGuard app on your phone</li>
           <li>Your first check-in will automatically register your device</li>
         </ol>
+        </div>
+
+<div className="wg-side-image__image">
+    <img
+      src={ActivateAccount
+}
+      alt="Activate Account"
+      className="wg-doc-image"
+    />
+
+    <p className="wg-image-caption">
+      New employees receive an activation email containing a secure link to create their password and activate their account.
+    </p>
+  </div>
+  </div>
+
         <div className="wg-callout wg-callout--warning">
           <span className="wg-callout__icon">⚠️</span>
           <div>If your activation link has expired, contact your administrator — they can resend it from your profile page.</div>

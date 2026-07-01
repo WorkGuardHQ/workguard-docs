@@ -88,7 +88,7 @@
 // src/pages/admin/EmailSettings.jsx
 
 import PageHeader from '../../components/PageHeader'
-
+import EmailSettingsImg from '../../assets/screenshots/EmailSettings.png'
 export default function EmailSettings() {
   return (
     <>
@@ -97,7 +97,17 @@ export default function EmailSettings() {
         title="Email Notifications & Settings"
         description="Configure a custom email address to send all WorkGuard notifications from. Your employees will receive emails that appear to come from your company, not a generic system address."
       />
+<img
+  src={EmailSettingsImg}
+  alt="Email Settings"
+  className="wg-doc-image"
+/>
 
+<p className="wg-image-caption">
+Configure your company's SMTP settings to send WorkGuard notifications from
+your own email address, verify the connection, and manage outgoing email
+delivery.
+</p>
       <div className="wg-section">
         <h2>Email Settings</h2>
         <div className="wg-table-wrap">
@@ -112,6 +122,12 @@ export default function EmailSettings() {
             </tbody>
           </table>
         </div>
+        <p>
+Passwords are encrypted before storage and are never displayed again after
+saving. Administrators can verify the configuration at any time using the
+built-in connection test.
+</p>
+
         <div className="wg-callout wg-callout--tip">
           <span className="wg-callout__icon">💡</span>
           <div>After saving your email settings, use the <strong>Test Connection</strong> button to send a test email and confirm your settings are working correctly before relying on them for employee notifications.</div>
@@ -141,7 +157,48 @@ export default function EmailSettings() {
             </tbody>
           </table>
         </div>
+
+        <p>
+All notification emails use your configured sender address and are delivered
+automatically whenever the corresponding event occurs.
+</p>
+
       </div>
+
+      <hr className="wg-divider" />
+
+<div className="wg-section">
+  <h2>Access Control</h2>
+
+  <div className="wg-table-wrap">
+    <table className="wg-table">
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Access</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Global Admin</td>
+          <td>Configure email settings for the company</td>
+        </tr>
+
+        <tr>
+          <td>Branch Admin</td>
+          <td>Cannot modify email settings</td>
+        </tr>
+
+        <tr>
+          <td>Employee</td>
+          <td>No access</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
     </>
   )
 }

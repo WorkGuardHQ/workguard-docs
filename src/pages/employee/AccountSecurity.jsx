@@ -51,6 +51,13 @@
 
 import PageHeader from '../../components/PageHeader'
 
+import login
+ from '../../assets/screenshots/login.jpg'
+import ActivateAccount
+ from '../../assets/screenshots/ActivateAccount.png'
+
+ import Forgotpassword
+ from '../../assets/screenshots/resetPass.jpg'
 export default function AccountSecurity() {
   return (
     <>
@@ -59,7 +66,15 @@ export default function AccountSecurity() {
         title="Account Security & Login"
         description="How to log in to WorkGuard and keep your account secure."
       />
+<img
+  src={login}
+  alt="Login"
+  className="wg-doc-image"
+/>
 
+<p className="wg-image-caption">
+Sign in to your company's WorkGuard workspace using your email address and password.
+</p>
       <div className="wg-section">
         <h2>Logging In</h2>
         <ol className="wg-steps">
@@ -77,6 +92,9 @@ export default function AccountSecurity() {
 
       <div className="wg-section">
         <h2>Account Activation</h2>
+
+        <div className="wg-side-image">
+  <div className="wg-side-image__content">
         <p>When your admin creates your account:</p>
         <ol className="wg-steps">
           <li>You'll receive an <strong>activation email</strong> with a unique setup link</li>
@@ -84,6 +102,20 @@ export default function AccountSecurity() {
           <li>Click the link, set your password, and your account is ready</li>
           <li>Until you activate, you cannot log in or check in</li>
         </ol>
+</div>
+<div className="wg-side-image__image">
+    <img
+      src={ActivateAccount
+}
+      alt="Activate Account"
+      className="wg-doc-image"
+    />
+
+    <p className="wg-image-caption">
+      New employees receive an activation email containing a secure link to create their password and activate their account.
+    </p>
+  </div>
+  </div>
         <div className="wg-callout wg-callout--tip">
           <span className="wg-callout__icon">💡</span>
           <div>If your activation link has expired, ask your admin to resend the activation email from your profile page.</div>
@@ -109,6 +141,16 @@ export default function AccountSecurity() {
           <li><span className="wg-priority-num">→</span><div>At least one <strong>lowercase</strong> letter</div></li>
           <li><span className="wg-priority-num">→</span><div>At least one <strong>number</strong></div></li>
         </ul>
+
+         <img
+      src={Forgotpassword}
+      alt="Forgot Password"
+      className="wg-doc-image"
+    />
+
+    <p className="wg-image-caption">
+      If you forget your password, request a secure reset link that lets you create a new password within the allowed time.
+    </p>
       </div>
 
       <hr className="wg-divider" />

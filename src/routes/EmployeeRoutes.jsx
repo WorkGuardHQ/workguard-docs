@@ -9,7 +9,7 @@ import Leaves from "../pages/employee/Leaves";
 import RemoteWork from "../pages/employee/RemoteWork";
 import Devices from "../pages/employee/Devices";
 import Profile from "../pages/employee/Profile";
-import Reports from "../pages/employee/Reports";
+// import Reports from "../pages/employee/Reports";
 import AccountSecurity from "../pages/employee/AccountSecurity";
 import Feedback from "../pages/employee/Feedback";
 
@@ -40,7 +40,7 @@ export default function EmployeeRoutes() {
 
         <Route path="profile" element={<Profile />} />
 
-        <Route path="reports" element={<Reports />} />
+        {/* <Route path="reports" element={<Reports />} /> */}
 
         <Route
           path="account-security"

@@ -1,7 +1,10 @@
 // src/pages/public/Security.jsx
 // import DocsLayout from '../../layouts/DocsLayout'
 import PageHeader from '../../components/PageHeader'
-
+import LoginImg
+ from '../../assets/screenshots/login.jpg'
+ import devicecontrol
+ from '../../assets/screenshots/device-control.png'
 export default function Security() {
   return (
     <>
@@ -10,7 +13,16 @@ export default function Security() {
         title="Security"
         description="WorkGuard is built with security at every layer — from biometric verification at check-in to role-based access control across the entire platform."
       />
+<img
+  src={LoginImg}
+  alt="WorkGuard Login"
+  className="wg-doc-image"
+/>
 
+<p className="wg-image-caption">
+Secure employee login with company-specific authentication and protected access
+to WorkGuard.
+</p>
       <div className="wg-section">
         <h2>Role-Based Access Control</h2>
         <div className="wg-table-wrap">
@@ -38,6 +50,8 @@ export default function Security() {
       <div className="wg-section">
         <h2>Device Security</h2>
         <p>Every check-in must come from a registered, approved device. Devices are identified by a combination of device ID and browser fingerprint, preventing unauthorized access even with valid credentials.</p>
+
+        
       </div>
 
       <hr className="wg-divider" />

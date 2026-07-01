@@ -105,6 +105,8 @@
 // src/pages/public/Reports.jsx
 
 import PageHeader from '../../components/PageHeader'
+import CompanyMonthlyReportImg from '../../assets/screenshots/monthreport.png'
+import EmployeeReportImg from '../../assets/screenshots/UserReport.png'
 
 export default function Reports() {
   return (
@@ -112,9 +114,18 @@ export default function Reports() {
       <PageHeader
         eyebrow="Payroll & Compliance"
         title="Reports"
-        description="WorkGuard provides detailed reports for individual employees and company-wide summaries. All reports can be exported to PDF or Excel."
+        description="WorkGuard provides detailed reports for individual employees and company-wide summaries. All reports can be exported to Excel."
       />
+<img
+  src={CompanyMonthlyReportImg}
+  alt="Company Monthly Report"
+  className="wg-doc-image"
+/>
 
+<p className="wg-image-caption">
+Generate company-wide reports with payroll summaries, employee rankings,
+attendance statistics, and branch or department filters.
+</p>
       <div className="wg-section">
         <h2>Employee Monthly Report</h2>
         <p>A complete monthly breakdown for one employee:</p>
@@ -133,6 +144,16 @@ export default function Reports() {
             </tbody>
           </table>
         </div>
+        <img
+  src={EmployeeReportImg}
+  alt="Employee Monthly Report"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+View a complete monthly report for a single employee, including attendance,
+payroll, deductions, overtime, bonuses, and leave information.
+</p>
       </div>
 
       <hr className="wg-divider" />
@@ -156,7 +177,13 @@ export default function Reports() {
 
       <div className="wg-section">
         <h2>Company Yearly Report</h2>
-        <p>A full-year view combining all 12 months — month-by-month trends, annual totals per employee, and company-wide yearly rankings.</p>
+
+        <ul className="wg-priority-list">
+  <li><span className="wg-priority-num">→</span><div>Month-by-month company trends</div></li>
+  <li><span className="wg-priority-num">→</span><div>Yearly employee totals</div></li>
+  <li><span className="wg-priority-num">→</span><div>Company-wide yearly rankings</div></li>
+</ul>
+        {/* <p>A full-year view combining all 12 months — month-by-month trends, annual totals per employee, and company-wide yearly rankings.</p> */}
       </div>
 
       <hr className="wg-divider" />
@@ -208,7 +235,21 @@ export default function Reports() {
       <hr className="wg-divider" />
 
       <div className="wg-section">
-        <h2>Export Options</h2>
+
+        <h2>Export to Excel</h2>
+
+<p>
+Reports can be exported to Excel for analysis, filtering, and integration
+with accounting or payroll workflows.
+</p>
+
+<h3>Employee Report Sheets</h3>
+<p>Summary · Leave · Overtime & Bonus · Attendance · Feedback</p>
+
+<h3>Company Report Sheets</h3>
+<p>Dashboard · Summary · Employees · Rankings · Monthly Trend (yearly report)</p>
+
+        {/* <h2>Export Options</h2>
         <div className="wg-table-wrap">
           <table className="wg-table">
             <thead><tr><th>Format</th><th>Best For</th></tr></thead>
@@ -223,7 +264,7 @@ export default function Reports() {
         <p>Summary · Leave · Overtime &amp; Bonus · Attendance · Feedback</p>
 
         <h3>Excel Sheets — Company Report</h3>
-        <p>Dashboard · Summary · Employees · Rankings · Monthly Trend (yearly report)</p>
+        <p>Dashboard · Summary · Employees · Rankings · Monthly Trend (yearly report)</p> */}
       </div>
 
       <hr className="wg-divider" />

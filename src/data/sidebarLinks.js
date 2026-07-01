@@ -268,6 +268,7 @@ export const publicLinks = [
       { label: 'Remote Work', path: '/public/remote-work' },
       { label: 'Device Management', path: '/public/devices' },
       { label: 'Branch Management', path: '/public/branches' },
+
     ],
   },
   {
@@ -284,11 +285,22 @@ export const publicLinks = [
     items: [
       { label: 'Security', path: '/public/security' },
      {
-  label: 'Feedback & Notes',
+  label: 'Feedback & Performance Notes',
   path: '/public/feedback'
 },
+
+
     ],
   },
+   {
+  group: 'Company',
+  items: [
+    {
+      label: 'About WorkGuard',
+      path: '/public/about',
+    },
+  ],
+}
 ]
 
 export const employeeLinks = [
@@ -317,7 +329,7 @@ export const employeeLinks = [
     items: [
       { label: 'My Devices', path: '/employee/devices' },
       { label: 'Profile', path: '/employee/profile' },
-      { label: 'My Reports', path: '/employee/reports' },
+      // { label: 'My Reports', path: '/employee/reports' },
       { label: 'Account Security', path: '/employee/account-security' },
     ],
   },

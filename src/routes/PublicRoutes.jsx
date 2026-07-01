@@ -17,6 +17,9 @@ import OvertimeBonus from "../pages/public/OvertimeBonus";
 import Reports from "../pages/public/Reports";
 import Security from "../pages/public/Security";
 import Feedback from "../pages/public/Feedback"
+
+import AboutWorkGuard from "../pages/public/AboutWorkGuard";
+
 export default function PublicRoutes() {
   return (
     <DocsLayout type="public">
@@ -84,6 +87,12 @@ export default function PublicRoutes() {
   path="feedback"
   element={<Feedback />}
 />
+
+<Route
+  path="about"
+  element={<AboutWorkGuard />}
+/>
+
 <Route path="*" element={<Navigate to="overview" replace />} />
       </Routes>
     </DocsLayout>

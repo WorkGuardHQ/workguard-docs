@@ -125,9 +125,12 @@ export default function Overview() {
 
 
   <div className="wg-section">
-  <p className="wg-section-subtitle">
-  See the main dashboard used by administrators to manage employees,
-  attendance, payroll, and company operations.
+<h2>Administrator Dashboard</h2>
+
+<p>
+The administrator dashboard provides quick access to every major WorkGuard
+module, including employee management, attendance, payroll, reports,
+departments, branches, and company settings.
 </p>
 
   <div className="wg-showcase">
@@ -216,6 +219,19 @@ export default function Overview() {
           ))}
         </div>
       </div>
+
+      <div className="wg-section">
+  <h2>Need More Information?</h2>
+
+  <p>
+    Interested in using WorkGuard for your organization, requesting a demo,
+    or looking for partnership opportunities?
+  </p>
+
+  <Link to="/public/about" className="wg-btn wg-btn--primary">
+    Learn More About WorkGuard →
+  </Link>
+</div>
       </>
     // </DocsLayout>
   )

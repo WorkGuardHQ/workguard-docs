@@ -92,7 +92,13 @@ export default function AutomatedJobs() {
         title="Automated Jobs & System Tasks"
         description="WorkGuard runs several automated background tasks to keep attendance records accurate, notify employees, and maintain the system. Here's what runs automatically and when."
       />
-
+<div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">⚙️</span>
+  <div>
+    These jobs run automatically in the background. No administrator action is
+    required unless a manual operation is available for a specific task.
+  </div>
+</div>
       <div className="wg-section">
         <h2>Scheduled Tasks Overview</h2>
         <div className="wg-table-wrap">
@@ -195,6 +201,37 @@ export default function AutomatedJobs() {
         </div>
         <p>A preview of the reset is available from the Leave Management section before it runs.</p>
       </div>
+
+      <hr className="wg-divider" />
+
+<div className="wg-section">
+  <h2>Manual Alternatives</h2>
+
+  <div className="wg-table-wrap">
+    <table className="wg-table">
+      <thead>
+        <tr>
+          <th>Automatic Job</th>
+          <th>Manual Alternative</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Close Missed Checkouts</td>
+          <td>Bulk Close Open Records</td>
+        </tr>
+        <tr>
+          <td>Payroll Generation</td>
+          <td>Generate Payroll</td>
+        </tr>
+        <tr>
+          <td>Yearly Leave Reset</td>
+          <td>Preview & Run from Leave Management</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
     </>
   )
 }

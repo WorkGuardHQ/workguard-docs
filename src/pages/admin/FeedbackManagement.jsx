@@ -82,6 +82,7 @@
 
 import PageHeader from '../../components/PageHeader'
 
+import FeedbackManagementImg from '../../assets/screenshots/Feedback-and-warning.png'
 export default function FeedbackManagement() {
   return (
     <>
@@ -90,6 +91,17 @@ export default function FeedbackManagement() {
         title="Feedback & Performance Notes"
         description="Add, manage, and track performance notes and formal warnings for employees. Notes can be internal-only or made visible to the employee."
       />
+<img
+  src={FeedbackManagementImg}
+  alt="Employee Feedback Management"
+  className="wg-doc-image"
+/>
+
+<p className="wg-image-caption">
+The Feedback section is available directly within each employee's profile,
+allowing admins to add notes, issue warnings, control visibility, and manage
+feedback history.
+</p>
 
       <div className="wg-section">
         <h2>Note Types</h2>
@@ -122,7 +134,7 @@ export default function FeedbackManagement() {
       <hr className="wg-divider" />
 
       <div className="wg-section">
-        <h2>Managing Notes</h2>
+        <h2>Managing Feedback</h2>
         <div className="wg-table-wrap">
           <table className="wg-table">
             <thead><tr><th>Action</th><th>Who Can Do It</th><th>Details</th></tr></thead>
@@ -135,14 +147,19 @@ export default function FeedbackManagement() {
             </tbody>
           </table>
         </div>
-        <p>All entries are logged with the admin's name and the creation timestamp. Edits and deletions are also logged.</p>
+        <p>
+Every feedback entry stores its creator, creation time, last edit time,
+visibility setting, and warning status for complete auditability.
+</p>
+{/* 
+        <p>All entries are logged with the admin's name and the creation timestamp. Edits and deletions are also logged.</p> */}
       </div>
 
       <hr className="wg-divider" />
 
       <div className="wg-section">
         <h2>Notes in Reports</h2>
-        <p>The employee monthly report's Feedback section includes:</p>
+        <p>Employee monthly reports include the following feedback information:</p>
         <ul className="wg-priority-list">
           <li><span className="wg-priority-num">→</span><div>Total number of feedback entries for the period</div></li>
           <li><span className="wg-priority-num">→</span><div>Count of formal warnings</div></li>
@@ -152,13 +169,42 @@ export default function FeedbackManagement() {
           <span className="wg-callout__icon">💡</span>
           <div>Only notes created <strong>within the report's month</strong> are included in that month's report. Older entries appear in the months they were created.</div>
         </div>
+
+        <p>
+Feedback is displayed chronologically in employee reports to provide a clear
+history of performance observations throughout the reporting period.
+</p>
+
       </div>
 
       <hr className="wg-divider" />
 
       <div className="wg-section">
-        <h2>Admin Scope</h2>
-        <p>Branch Admins can only add and view notes for employees within their assigned branches. Global Admins can manage notes for any employee in the company.</p>
+        <h2>Access Control</h2>
+      <div className="wg-table-wrap">
+  <table className="wg-table">
+    <thead>
+      <tr>
+        <th>Role</th>
+        <th>Access</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Global Admin</td>
+        <td>Manage feedback for all employees</td>
+      </tr>
+      <tr>
+        <td>Branch Admin</td>
+        <td>Manage feedback only for employees within assigned branches</td>
+      </tr>
+      <tr>
+        <td>Employee</td>
+        <td>View only notes marked as visible to employee</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
       </div>
     </>
   )
