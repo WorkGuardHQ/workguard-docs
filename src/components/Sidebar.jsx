@@ -146,6 +146,7 @@ export default function Sidebar({  type,
             <NavLink
               key={item.path}
               to={item.path}
+               onClick={onClose}
               className={({ isActive }) =>
                 'wg-sidebar__link' + (isActive ? ' active' : '')
               }
