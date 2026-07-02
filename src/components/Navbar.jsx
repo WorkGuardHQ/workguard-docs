@@ -132,9 +132,15 @@ export default function Navbar({ onMenuClick }) {
             className="navbar-logo"
           />
         </div>
-        <span className="wg-navbar__brand">
-          WorkGuard Documentation
-        </span>
+        <span className="wg-navbar__brand wg-navbar__brand--desktop">
+  WorkGuard Documentation
+</span>
+
+<span className="wg-navbar__brand wg-navbar__brand--mobile">
+  WorkGuard
+</span>
+
+       
       </Link>
 
       <div className="wg-navbar__divider" />
@@ -144,20 +150,31 @@ export default function Navbar({ onMenuClick }) {
       <SearchBar type={section} />
 
       <div className="wg-navbar__links">
-        <Link to="/public/overview" className="wg-navbar__link">
+        {/* <Link to="/public/overview" className="wg-navbar__link">
           Product Docs
-        </Link>
-
+        </Link> */}
+<Link to="/public/overview" className="wg-navbar__link">
+  <span className="desktop-text">Product Docs</span>
+  <span className="mobile-text">Docs</span>
+</Link>
         {(isStaff || isAdmin) && (
+          // <Link to="/employee/welcome" className="wg-navbar__link">
+          //   Employee Help
+          // </Link>
           <Link to="/employee/welcome" className="wg-navbar__link">
-            Employee Help
-          </Link>
+  <span className="desktop-text">Employee Help</span>
+  <span className="mobile-text">Employee</span>
+</Link>
         )}
 
         {isAdmin && (
+          // <Link to="/admin/employee-management" className="wg-navbar__link">
+          //   Admin Help
+          // </Link>
           <Link to="/admin/employee-management" className="wg-navbar__link">
-            Admin Help
-          </Link>
+  <span className="desktop-text">Admin Help</span>
+  <span className="mobile-text">Admin</span>
+</Link>
         )}
       </div>
 

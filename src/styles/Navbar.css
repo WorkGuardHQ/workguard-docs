@@ -65,3 +65,41 @@
 .wg-navbar__link:hover {
   color: var(--wg-blue);
 }
+
+.wg-navbar__brand--mobile {
+  display: none;
+}
+
+.wg-navbar__brand--mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .wg-navbar__brand--desktop {
+    display: none;
+  }
+
+  .wg-navbar__brand--mobile {
+    display: inline;
+  }
+}
+
+.mobile-text{
+    display:none;
+}
+
+.desktop-text{
+    display:inline;
+}
+
+@media (max-width:768px){
+
+    .desktop-text{
+        display:none;
+    }
+
+    .mobile-text{
+        display:inline;
+    }
+
+}

@@ -1,7 +1,7 @@
 // src/components/Search/SearchModal.jsx
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { FiSearch } from "react-icons/fi";
 import useSearch from "../../hooks/useSearch";
 import getSearchDataset from "../../data/search";
 import SearchResult from "./SearchResult";
@@ -65,9 +65,7 @@ export default function SearchModal({ type = "public", onClose }) {
     >
       <div className="wg-search__panel" role="dialog" aria-modal="true">
         <div className="wg-search__input-row">
-          <span className="wg-search__icon" aria-hidden="true">
-            &#128269;
-          </span>
+          <FiSearch className="wg-search__icon" />
 
           <input
             ref={inputRef}
