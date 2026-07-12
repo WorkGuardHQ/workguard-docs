@@ -52,12 +52,12 @@
 import PageHeader from '../../components/PageHeader'
 
 import login
- from '../../assets/screenshots/login.jpg'
+ from '../../assets/screenshots/login.png'
 import ActivateAccount
  from '../../assets/screenshots/ActivateAccount.png'
 
  import Forgotpassword
- from '../../assets/screenshots/resetPass.jpg'
+ from '../../assets/screenshots/resetPass.png'
 export default function AccountSecurity() {
   return (
     <>

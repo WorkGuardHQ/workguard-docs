@@ -2,7 +2,7 @@
 // import DocsLayout from '../../layouts/DocsLayout'
 import PageHeader from '../../components/PageHeader'
 import LoginImg
- from '../../assets/screenshots/login.jpg'
+ from '../../assets/screenshots/login.png'
  import devicecontrol
  from '../../assets/screenshots/device-control.png'
 export default function Security() {
