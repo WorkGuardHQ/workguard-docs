@@ -207,14 +207,163 @@ export default function Payroll() {
         <p>Total deductions = sum of all the above.</p>
       </div>
 
-      <hr className="wg-divider" />
 
-      <div className="wg-section">
-        <h2>Net Salary</h2>
-        <div className="wg-formula">Net Salary = Base Salary − Total Deductions + Overtime Pay + Bonuses</div>
-        <p>Net salary cannot go below zero.</p>
+<hr className="wg-divider" />
+
+<div className="wg-section">
+  <h2>Net Salary</h2>
+
+  <div className="wg-formula">
+    System Net Salary = Base Salary − Total Deductions + Overtime Pay + Bonuses
+  </div>
+
+  <p>
+    The system calculates the initial net salary automatically from the
+    employee's salary, deductions, overtime, and bonuses.
+  </p>
+
+  <div className="wg-formula">
+    Final Net Salary = System Net Salary + Manual Adjustment
+  </div>
+
+  <p>
+    A manual adjustment can then be applied while the payroll run is still
+    in <strong>Draft</strong> status.
+  </p>
+</div>
+
+<hr className="wg-divider" />
+
+<div className="wg-section">
+  <h2>Manual Payroll Adjustment</h2>
+
+  <p>
+    After payroll is generated, administrators can manually adjust the
+    calculated net salary while the payroll run is still in
+    <strong> Draft</strong> status.
+  </p>
+
+  <p>
+    This allows administrators to apply a specific increase or deduction
+when the final payroll amount requires a manual correction or exceptional
+adjustment.
+  </p>
+
+  <div className="wg-table-wrap">
+    <table className="wg-table">
+      <thead>
+        <tr>
+          <th>Adjustment</th>
+          <th>How It Works</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>
+            <strong>Positive amount</strong>
+          </td>
+          <td>
+            Increases the final net salary.
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <strong>Negative amount</strong>
+          </td>
+          <td>
+            Deducts the specified amount from the final net salary.
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <strong>Reason</strong>
+          </td>
+          <td>
+            Required whenever a non-zero manual adjustment is applied.
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <strong>Live Preview</strong>
+          </td>
+          <td>
+            Shows the system-calculated net salary, the proposed adjustment,
+            and the resulting final amount before the adjustment is saved.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div className="wg-callout wg-callout--tip">
+    <span className="wg-callout__icon">💰</span>
+
+    <div>
+      <strong>How the final amount is calculated</strong>
+
+      <div
+        className="wg-formula"
+        style={{ marginTop: '10px' }}
+      >
+        Final Net Salary = System Calculated Net Salary + Manual Adjustment
       </div>
+    </div>
+  </div>
+</div>
 
+<hr className="wg-divider" />
+
+<div className="wg-section">
+  <h2>Editing or Removing an Adjustment</h2>
+
+  <p>
+    If a manual adjustment has already been applied while the payroll run
+    is still in Draft status, the administrator can review the adjustment
+    and its reason.
+  </p>
+
+  <ul className="wg-priority-list">
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        An existing adjustment can be <strong>edited</strong>.
+      </div>
+    </li>
+
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        An existing adjustment can be <strong>removed</strong>.
+      </div>
+    </li>
+
+    <li>
+      <span className="wg-priority-num">→</span>
+      <div>
+        The adjustment records the administrator who applied it and
+        the date it was applied.
+      </div>
+    </li>
+  </ul>
+
+  <div className="wg-callout wg-callout--warning">
+    <span className="wg-callout__icon">🔒</span>
+
+    <div>
+      <strong>Draft status only</strong>
+
+      <p style={{ margin: '6px 0 0' }}>
+        Manual payroll adjustments are available while the payroll run
+        remains in Draft status. Once the payroll is approved, the run
+        becomes finalized and locked.
+      </p>
+    </div>
+  </div>
+</div>
       <hr className="wg-divider" />
 
       <div className="wg-section">
@@ -241,8 +390,10 @@ export default function Payroll() {
           <table className="wg-table">
             <thead><tr><th>Status</th><th>Description</th></tr></thead>
             <tbody>
-              <tr><td><span className="wg-badge wg-badge--yellow">Draft</span></td><td>Generated but not yet approved — can be regenerated or edited</td></tr>
-              <tr><td><span className="wg-badge wg-badge--green">Approved</span></td><td>Finalized and locked — attendance for that period cannot be changed</td></tr>
+              <tr><td><span className="wg-badge wg-badge--yellow">Draft</span></td><td> Generated but not yet approved. The payroll can be reviewed,
+    regenerated, and manually adjusted before approval.</td></tr>
+              <tr><td><span className="wg-badge wg-badge--green">Approved</span></td><td>Finalized and locked. The payroll can no longer be manually adjusted.
+</td></tr>
             </tbody>
           </table>
         </div>

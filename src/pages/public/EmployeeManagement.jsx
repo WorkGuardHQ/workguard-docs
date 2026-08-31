@@ -47,7 +47,15 @@ export default function EmployeeManagement() {
               <tr><td>Full Name</td><td>Appears in all reports and notifications</td></tr>
               <tr><td>Email</td><td>Used for login and all system emails — must be unique within your company</td></tr>
               <tr><td>Phone</td><td>Contact number</td></tr>
-              <tr><td>Role</td><td><code>Staff</code> for regular employees, <code>Admin</code> for managers</td></tr>
+
+              <tr><td>Employment Start Date</td><td>The first actual workday for the employee in WorkGuard.</td></tr>
+
+              <tr><td>Original Hire Date</td><td>The employee's original joining date with the company.</td></tr>
+ <tr><td>Role</td><td><code>Staff</code> for regular employees, <code>Admin</code> for managers</td></tr>
+              
+              <tr><td>Workforce Status</td><td>View & Control means this account manages the system but is not counted as an employee in attendance, payroll, or reports.</td></tr>
+
+             
             </tbody>
           </table>
         </div>

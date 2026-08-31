@@ -34,7 +34,8 @@ export default function EmployeeManagement() {
 />
 
 <p className="wg-image-caption">
-  Employee profile form showing personal information, assignments, work schedule, salary, and permissions.
+   Employee profile form showing personal information, employment dates,
+  workforce status, assignments, work schedule, salary, and permissions.
 </p>
 
         <h3>Identity &amp; Contact</h3>
@@ -69,6 +70,94 @@ export default function EmployeeManagement() {
           <span className="wg-callout__icon">⚠️</span>
           <div>Always confirm the correct timezone for each employee, especially for employees working across different cities or countries. An incorrect timezone causes incorrect late/early calculations.</div>
         </div>
+
+<h3>Employment Dates</h3>
+
+<div className="wg-table-wrap">
+  <table className="wg-table">
+    <thead>
+      <tr>
+        <th>Field</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Employment Start Date</td>
+        <td>
+          The first actual workday for the employee in WorkGuard.
+          This date determines when the employee's active employment
+          period begins and when attendance tracking starts.
+        </td>
+      </tr>
+
+      <tr>
+        <td>Original Hire Date</td>
+        <td>
+          The employee's original joining date with the company.
+          Leave this field empty for new hires. It can be used when
+          migrating an existing employee into WorkGuard who joined
+          the company before their WorkGuard start date.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">📌</span>
+  <div>
+    <strong>Important:</strong> Employment Start Date represents the
+    employee's actual starting point in WorkGuard. Original Hire Date
+    preserves the employee's historical company hire date and may be
+    earlier than the WorkGuard start date.
+  </div>
+</div>
+
+
+<h3>Workforce Status</h3>
+
+<div className="wg-table-wrap">
+  <table className="wg-table">
+    <thead>
+      <tr>
+        <th>Option</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Included in Attendance &amp; Payroll</td>
+        <td>
+          The account is treated as part of the workforce and is included
+          in attendance tracking, payroll calculations, and workforce reports.
+        </td>
+      </tr>
+
+      <tr>
+        <td>View &amp; Control Only</td>
+        <td>
+          The account can access and manage the system but is not treated
+          as an employee. It is excluded from attendance, payroll,
+          and workforce reports.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div className="wg-callout wg-callout--warning">
+  <span className="wg-callout__icon">⚠️</span>
+
+  <div>
+    <strong>View &amp; Control Only</strong> means the account is intended
+    for system management and operational control rather than workforce
+    participation. This account is not counted as an employee in
+    attendance, payroll, or workforce reports.
+  </div>
+</div>
 
         <h3>Branch &amp; Department</h3>
         <div className="wg-table-wrap">
