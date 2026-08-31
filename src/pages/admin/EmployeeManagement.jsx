@@ -52,24 +52,6 @@ export default function EmployeeManagement() {
           </table>
         </div>
 
-        <h3>Work Schedule</h3>
-        <div className="wg-table-wrap">
-          <table className="wg-table">
-            <thead><tr><th>Field</th><th>Description</th></tr></thead>
-            <tbody>
-              <tr><td>Shift Start Time</td><td>The time the employee's shift begins — e.g. <code>09:00</code></td></tr>
-              <tr><td>Shift End Time</td><td>The time the shift ends — e.g. <code>18:00</code></td></tr>
-              <tr><td>Working Days</td><td>The days of the week this employee is expected to work</td></tr>
-              <tr><td>Working Hours Per Day</td><td>Used to calculate hourly salary for deductions</td></tr>
-              <tr><td>Night Shift</td><td>Enable if the shift crosses midnight (e.g. 10 PM to 6 AM)</td></tr>
-              <tr><td>Personal Timezone</td><td>Overrides the branch timezone for this employee's shift calculations</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div className="wg-callout wg-callout--warning">
-          <span className="wg-callout__icon">⚠️</span>
-          <div>Always confirm the correct timezone for each employee, especially for employees working across different cities or countries. An incorrect timezone causes incorrect late/early calculations.</div>
-        </div>
 
 <h3>Employment Dates</h3>
 
@@ -158,6 +140,29 @@ export default function EmployeeManagement() {
     attendance, payroll, or workforce reports.
   </div>
 </div>
+
+
+
+        <h3>Work Schedule</h3>
+        <div className="wg-table-wrap">
+          <table className="wg-table">
+            <thead><tr><th>Field</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td>Shift Start Time</td><td>The time the employee's shift begins — e.g. <code>09:00</code></td></tr>
+              <tr><td>Shift End Time</td><td>The time the shift ends — e.g. <code>18:00</code></td></tr>
+              <tr><td>Working Days</td><td>The days of the week this employee is expected to work</td></tr>
+              <tr><td>Working Hours Per Day</td><td>Used to calculate hourly salary for deductions</td></tr>
+              <tr><td>Night Shift</td><td>Enable if the shift crosses midnight (e.g. 10 PM to 6 AM)</td></tr>
+              <tr><td>Personal Timezone</td><td>Overrides the branch timezone for this employee's shift calculations</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="wg-callout wg-callout--warning">
+          <span className="wg-callout__icon">⚠️</span>
+          <div>Always confirm the correct timezone for each employee, especially for employees working across different cities or countries. An incorrect timezone causes incorrect late/early calculations.</div>
+        </div>
+
+
 
         <h3>Branch &amp; Department</h3>
         <div className="wg-table-wrap">

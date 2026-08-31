@@ -54,7 +54,8 @@ export default function EmployeeManagement() {
  <tr><td>Role</td><td><code>Staff</code> for regular employees, <code>Admin</code> for managers</td></tr>
               
               <tr><td>Workforce Status</td><td>View & Control means this account manages the system but is not counted as an employee in attendance, payroll, or reports.</td></tr>
-
+ <tr><td>Phone</td><td>Contact number</td></tr>
+              <tr><td>Address</td><td>Physical address</td></tr>
              
             </tbody>
           </table>
