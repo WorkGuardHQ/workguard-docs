@@ -211,7 +211,7 @@ export default function EmployeeManagement() {
         <p>When a new employee is added to WorkGuard, the system automatically sends them an activation email.</p>
         <ol className="wg-steps">
           <li>Employee receives an activation email with a unique link</li>
-          <li>The link is valid for <strong>24 hours</strong></li>
+          <li>The link is valid for <strong>7 days</strong></li>
           <li>Employee clicks the link, sets their password, and gains access</li>
           <li>Until activation, they cannot log in or check in</li>
         </ol>

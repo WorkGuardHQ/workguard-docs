@@ -98,7 +98,7 @@ Sign in to your company's WorkGuard workspace using your email address and passw
         <p>When your admin creates your account:</p>
         <ol className="wg-steps">
           <li>You'll receive an <strong>activation email</strong> with a unique setup link</li>
-          <li>The link is valid for <strong>24 hours</strong></li>
+          <li>The link is valid for <strong>7 days</strong></li>
           <li>Click the link, set your password, and your account is ready</li>
           <li>Until you activate, you cannot log in or check in</li>
         </ol>

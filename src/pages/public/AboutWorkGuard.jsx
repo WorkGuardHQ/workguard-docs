@@ -467,7 +467,7 @@ export default function AboutWorkGuard() {
                 </td>
               </tr>
 
-              <tr>
+              {/* <tr>
                 <td>Instagram</td>
                 <td>
                   <a
@@ -478,7 +478,7 @@ export default function AboutWorkGuard() {
                     @mokamu.global
                   </a>
                 </td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
         </div>

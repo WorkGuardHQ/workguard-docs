@@ -315,7 +315,7 @@ Admin permissions and scope settings configured from the employee profile.
         <h2>Account Activation</h2>
         <ol className="wg-steps">
           <li>An activation email is sent automatically when you create a new employee account</li>
-          <li>The email contains a unique link valid for <strong>24 hours</strong></li>
+          <li>The email contains a unique link valid for <strong>7 days</strong></li>
           <li>The employee clicks the link, sets their password, and their account is activated</li>
           <li>Until activation, the employee cannot check in or access the system</li>
         </ol>
