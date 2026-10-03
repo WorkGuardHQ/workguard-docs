@@ -213,17 +213,19 @@ export default function HolidayManagement() {
                 <td>
                   <span className="wg-badge wg-badge--gray">Archived</span>
                 </td>
-                <td>All holidays have passed</td>
+                {/* <td>All holidays have passed</td> */}
+                  <td>All holidays have ended, or the plan was cancelled</td>
+
                 <td>View only</td>
               </tr>
 
-              <tr>
+              {/* <tr>
                 <td>
                   <span className="wg-badge wg-badge--red">Cancelled</span>
                 </td>
                 <td>Manually cancelled</td>
                 <td>View only</td>
-              </tr>
+              </tr> */}
             </tbody>
           </table>
           
@@ -234,12 +236,19 @@ export default function HolidayManagement() {
           
           <span className="wg-callout__icon">📌</span>
           <div>
-            A plan requires at least one future holiday to be activated.
-            Holidays can only be added or removed while the plan is in
-            <strong> Draft </strong> status.
-          </div>
+  A plan requires at least one holiday that has not started yet to be
+  activated. Holidays can only be added, removed, or have their dates edited
+  while the plan is in <strong>Draft</strong> status.
+</div>
           
         </div>
+
+
+<p>
+  Only one open plan (Draft or Active) can exist per year. Once a plan is
+  archived, you can create a new plan for the same year.
+</p>
+
 
 <h3>Viewing a Holiday Plan</h3>
 
@@ -346,7 +355,7 @@ export default function HolidayManagement() {
           When you cancel an active plan, specify a cancellation date:
         </p>
 
-        <ul className="wg-priority-list">
+        {/* <ul className="wg-priority-list">
           <li>
             <span className="wg-priority-num">→</span>
             <div>
@@ -368,8 +377,33 @@ export default function HolidayManagement() {
               date forward.
             </div>
           </li>
-        </ul>
+        </ul> */}
+<ul className="wg-priority-list">
+  <li>
+    <span className="wg-priority-num">→</span>
+    <div>Holidays that ended before the cancellation date are not affected.</div>
+  </li>
 
+  <li>
+    <span className="wg-priority-num">→</span>
+    <div>
+      Holidays starting on or after the cancellation date are archived.
+    </div>
+  </li>
+
+  <li>
+    <span className="wg-priority-num">→</span>
+    <div>
+      Holidays spanning the cancellation date are cancelled from that date
+      forward. Earlier days remain holidays.
+    </div>
+  </li>
+
+  <li>
+    <span className="wg-priority-num">→</span>
+    <div>The cancellation date cannot be in the past.</div>
+  </li>
+</ul>
         <div className="wg-callout wg-callout--success">
           <span className="wg-callout__icon">✅</span>
 
@@ -420,9 +454,34 @@ export default function HolidayManagement() {
                 <td>Company-wide and branch holidays sharing dates</td>
                 <td>Yes</td>
               </tr>
+
+              <tr>
+  <td>Two holidays with the same scope and overlapping dates inside the same plan</td>
+  <td>No</td>
+</tr>
+
+<tr>
+  <td>A new holiday overlapping a Draft holiday (in any plan)</td>
+  <td>No</td>
+</tr>
+
+<tr>
+  <td>A new holiday overlapping an Archived holiday</td>
+  <td>Yes</td>
+</tr>
+
+<tr>
+  <td>Dates from the cancellation date onward of a partially cancelled holiday</td>
+  <td>Yes (earlier dates still count)</td>
+</tr>
             </tbody>
           </table>
         </div>
+
+        <p>
+  Draft holidays reserve their dates. To free the dates, delete the draft.
+</p>
+
       </div>
 
       <hr className="wg-divider" />
@@ -439,7 +498,7 @@ export default function HolidayManagement() {
                 <th>Holiday Status</th>
               </tr>
             </thead>
-
+{/* 
             <tbody>
               <tr>
                 <td>Single-branch employee</td>
@@ -470,9 +529,49 @@ export default function HolidayManagement() {
                   according to company policy.
                 </td>
               </tr>
-            </tbody>
+            </tbody> */}
+        
+        <tbody>
+  <tr>
+    <td>Single-branch employee</td>
+    <td>Holiday applies if their branch has a holiday.</td>
+  </tr>
+
+  <tr>
+    <td>Multi-branch, present: every attended branch has a holiday</td>
+    <td>
+      Holiday. Attendance is recorded and may qualify for holiday overtime
+      according to company policy.
+    </td>
+  </tr>
+
+  <tr>
+    <td>Multi-branch, present: at least one attended branch has no holiday</td>
+    <td>
+      Regular working day, with normal late and early-leave deductions.
+    </td>
+  </tr>
+
+  <tr>
+    <td>Multi-branch, absent</td>
+    <td>Holiday applies if any assigned branch has a holiday.</td>
+  </tr>
+</tbody>
           </table>
         </div>
+<p>
+  <strong>Future dates:</strong> a single-branch employee sees the holiday
+  immediately in the payroll preview. For a multi-branch employee, a
+  branch-level holiday appears only after attendance is recorded or the day
+  is recalculated.
+</p>
+
+<p>
+  <strong>Leave requests:</strong> for a multi-branch employee, a day that is
+  a holiday in any of their branches is not counted as a leave day and is not
+  deducted from the leave balance.
+</p>
+
       </div>
 
       <hr className="wg-divider" />
