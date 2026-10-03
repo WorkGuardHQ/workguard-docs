@@ -412,7 +412,7 @@ export default function OvertimeBonusPolicies() {
           <span className="wg-callout__icon">📌</span>
           <div><strong>Example:</strong> 2 hours overtime, hourly salary = 50 EGP, multiplier = 1.5<br />→ 2 × 50 × 1.5 = <strong>150 EGP</strong></div>
         </div>
-        <p>The multiplier is applied to full hours, not minute-by-minute. This reflects industry-standard overtime calculation.</p>
+        <p>Overtime is calculated from the exact minutes worked, converted to hours. For example, 90 minutes is counted as 1.5 hours, not rounded to a full hour.</p>
 
         <h3>Fixed Rate Method</h3>
         <div className="wg-formula">Overtime pay = (overtime hours) × fixed rate per hour</div>
@@ -496,7 +496,19 @@ export default function OvertimeBonusPolicies() {
         <div className="wg-callout wg-callout--warning">
           <span className="wg-callout__icon">⚠️</span>
           <div>Enter <code>0</code> to set a strict "zero allowed" limit. Enter a number (e.g. <code>5</code>) to allow up to that amount. Leave the field empty to not enforce that condition at all.</div>
+
+        
         </div>
+        <div className="wg-callout wg-callout--tip">
+  <span className="wg-callout__icon">📌</span>
+  <div>
+    Late minutes are counted <strong>after</strong> the grace period in the attendance policy is applied, day by day.
+    Example: with a 10-minute grace period, arriving 8 minutes late counts as <strong>0</strong>,
+    and arriving 15 minutes late counts as <strong>5</strong>. The same rule applies to "Maximum late days".
+  </div>
+</div>
+
+
 
         <h3>Bonus Reward Calculation</h3>
         <div className="wg-table-wrap">
@@ -545,7 +557,7 @@ export default function OvertimeBonusPolicies() {
             </tbody>
           </table>
         </div>
-        <p>The amount can be a fixed value or a percentage of base salary — same calculation as the attendance bonus reward.</p>
+        <p>The amount is a fixed value, paid in full when the condition above is met. (A percentage of salary is available only for the Attendance Bonus reward.)</p>
 
         
       </div>
@@ -559,7 +571,9 @@ export default function OvertimeBonusPolicies() {
           <li><span className="wg-priority-num">→</span><div>Are listed alongside auto-generated overtime records in the <strong>Overtime &amp; Exceptional Entries</strong> page — they share the same records table, which is why both appear there together</div></li>
           <li><span className="wg-priority-num">→</span><div>In an employee's payroll run, they are calculated and shown strictly as a <strong>bonus</strong> — they appear only in the Bonus section, never in the Overtime section</div></li>
           <li><span className="wg-priority-num">→</span><div>Are <strong>always paid in full</strong> — never subject to the monthly overtime cap</div></li>
-          <li><span className="wg-priority-num">→</span><div>Can include a note explaining the reason</div></li>
+          <li><span className="wg-priority-num">→</span><div><strong>Require a note</strong> explaining the reason — the bonus cannot be saved without it</div></li>
+<li><span className="wg-priority-num">→</span><div>Must have an amount greater than zero</div></li>
+<li><span className="wg-priority-num">→</span><div>Limited to <strong>one exceptional bonus per employee per day</strong></div></li>
         </ul>
 
       <div className="wg-callout wg-callout--tip">
@@ -590,8 +604,9 @@ Exceptional bonuses are created manually by administrators and are independent f
       <hr className="wg-divider" />
 
       <div className="wg-section">
-        <h2>Policy Date Range</h2>
-        <p>Each policy has a start date and an optional end date. Two policies of the same scope cannot have overlapping date ranges. Historical records remain accurate even when policies change — each payroll run stores a snapshot of which policy applied on each day.</p>
+        <h2>Active Policy &amp; Changes Over Time</h2>
+<p>Only one policy can be active at a time for the same scope target (for example, one active policy per branch). To replace a policy, deactivate the old one before activating the new one.</p>
+<p>Changes apply to calculations made after the change. Overtime entries store a snapshot of the policy used when they were generated, and approved payroll runs are locked and never change. A <strong>draft</strong> payroll that is regenerated uses the policies that are active at that moment.</p>
       </div>
     </>
   )
