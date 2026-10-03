@@ -251,9 +251,13 @@ export default function AttendancePolicies() {
           <table className="wg-table">
             <thead><tr><th>Setting</th><th>What It Means</th></tr></thead>
             <tbody>
-              <tr><td>Late grace (minutes)</td><td>Employee can arrive this many minutes late without any deduction. E.g. 10 minutes means arriving 9 minutes late is fine.</td></tr>
+              {/* <tr><td>Late grace (minutes)</td><td>Employee can arrive this many minutes late without any deduction. E.g. 10 minutes means arriving 9 minutes late is fine.</td></tr>
               <tr><td>Early leave grace (minutes)</td><td>Employee can leave this many minutes early without a deduction</td></tr>
-              <tr><td>Daily break allowance (minutes)</td><td>Total break time per day that is not deducted. Time beyond this is subject to deduction.</td></tr>
+              <tr><td>Daily break allowance (minutes)</td><td>Total break time per day that is not deducted. Time beyond this is subject to deduction.</td></tr> */}
+
+              <tr><td>Late grace (minutes)</td><td>Minutes of lateness that are not deducted. Only the time <strong>beyond</strong> the grace is deducted. E.g. with 10 minutes: arriving 8 minutes late = no deduction; arriving 15 minutes late = 5 minutes deducted. Applied to the first check-in of the day.</td></tr>
+<tr><td>Early leave grace (minutes)</td><td>Same rule: only the minutes beyond the grace are deducted. Applied to the last check-out of the day.</td></tr>
+<tr><td>Daily break allowance (minutes)</td><td>Total break time per day that is not deducted. Only the time beyond this total is deducted.</td></tr>
             </tbody>
           </table>
         </div>
@@ -283,21 +287,33 @@ export default function AttendancePolicies() {
         <p>Deduction rates control how much salary is deducted per minute of late arrival, early departure, transit time, or excess break time.</p>
         <div className="wg-callout wg-callout--danger">
           <span className="wg-callout__icon">🚨</span>
-          <div>
+          {/* <div>
             <strong>Rates are entered as decimal fractions, not percentages.</strong><br />
             To deduct <strong>2%</strong> of the hourly salary per minute → enter <code>0.02</code><br />
             <strong>Do NOT enter <code>2</code></strong> — this would deduct 200% of the hourly salary per minute, which is a major payroll error.
-          </div>
+          </div> */}
+
+          <div>
+  <strong>Rates are entered as decimal fractions, not percentages.</strong><br />
+  The rate is applied to the pay of each deducted minute: <code>1</code> = the full pay of that minute, <code>0.02</code> = 2% of it.<br />
+  <strong>Do NOT enter <code>2</code></strong> to mean 2% — this would deduct double the pay of every deducted minute, which is a major payroll error.
+</div>
         </div>
         <div className="wg-table-wrap">
           <table className="wg-table">
             <thead><tr><th>Field</th><th>Enter In UI</th><th>What It Means</th></tr></thead>
-            <tbody>
+            {/* <tbody>
               <tr><td>Late deduction rate</td><td><code>0.02</code></td><td>2% of hourly salary deducted per minute of late arrival</td></tr>
               <tr><td>Early leave rate</td><td><code>0.02</code></td><td>2% of hourly salary deducted per minute of early departure</td></tr>
               <tr><td>Transit rate</td><td><code>0.01</code></td><td>1% of hourly salary deducted per minute of excess travel between branches</td></tr>
               <tr><td>Break/gap rate</td><td><code>0.01</code></td><td>1% of hourly salary deducted per minute of excess break time</td></tr>
-            </tbody>
+            </tbody> */}
+            <tbody>
+  <tr><td>Late deduction rate</td><td><code>0.02</code></td><td>2% of the pay of each late minute</td></tr>
+  <tr><td>Early leave rate</td><td><code>0.02</code></td><td>2% of the pay of each minute left early</td></tr>
+  <tr><td>Transit rate</td><td><code>0.01</code></td><td>1% of the pay of each minute of excess travel between branches</td></tr>
+  <tr><td>Break/gap rate</td><td><code>0.01</code></td><td>1% of the pay of each minute of excess break time</td></tr>
+</tbody>
           </table>
         </div>
 
@@ -307,7 +323,7 @@ export default function AttendancePolicies() {
             <thead><tr><th>Step</th><th>Formula</th></tr></thead>
             <tbody>
               <tr><td>Hourly salary</td><td>Base salary ÷ Expected working days ÷ Working hours per day</td></tr>
-              <tr><td>Deduction per minute</td><td>Hourly salary × rate value</td></tr>
+              <tr><td>Deduction per minute</td><td>(Hourly salary ÷ 60) × rate value</td></tr>
               <tr><td>Total deduction</td><td>Deduction per minute × number of deducted minutes</td></tr>
             </tbody>
           </table>
@@ -318,11 +334,11 @@ export default function AttendancePolicies() {
             <strong>Example:</strong> Employee earns 10,000 EGP/month, works 22 days/month, 8 hours/day, late rate = 0.02:<br />
             Hourly salary = 10,000 ÷ 22 ÷ 8 = <strong>56.82 EGP/hour</strong><br />
             Deduction per late minute = 56.82 × 0.02 ÷ 60 = <strong>0.019 EGP/minute</strong><br />
-            Employee was 42 minutes late: 0.019 × 42 = <strong>0.80 EGP deducted</strong>
+            Employee had 42 late minutes after the grace period: 0.019 × 42 = <strong>0.80 EGP deducted</strong>
           </div>
         </div>
         <p>Transit deductions (between branches) and break deductions (same branch) use separate rates and are calculated independently.</p>
-
+<p>Travel between branches has no grace period. Instead, each employee or branch has an allowed transit time (default 60 minutes). Only the time beyond the allowed transit time is deducted, using the transit rate.</p>
         <img
   src={AttendancePoliciesForm2}
   alt="Create Attendance Policy"
@@ -362,7 +378,7 @@ export default function AttendancePolicies() {
       <div className="wg-section">
         <h2>Policy Date Range</h2>
         <p>Each policy has a <strong>start date</strong> (required) and an <strong>end date</strong> (leave empty for no expiry). Two active policies of the same scope cannot overlap in their date ranges — the system will block you from creating or saving an overlapping policy.</p>
-
+<p>To replace a policy, set an end date on the current one and create the new one starting the next day.</p>
         <img
   src={AttendancePoliciesForm3}
   alt="Create Attendance Policy"
@@ -384,7 +400,7 @@ export default function AttendancePolicies() {
 
       <div className="wg-section">
         <h2>Policy Activation</h2>
-        <p>Only <strong>active</strong> policies are applied when calculating attendance. When you activate a new policy, any previously active policy of the same scope is automatically deactivated. The system keeps a full history of when each policy was activated and deactivated.</p>
+        <p>Only <strong>active</strong> policies are applied when calculating attendance. Only one policy can be active per scope target (company, one branch, one role, or one employee). Activating a policy automatically deactivates the other active policy of the same target. When creating or editing a policy as active, its date range must not overlap with the currently active one, otherwise the system rejects it.</p>
 
         <img
   src={AttendancePoliciesHistory}
@@ -427,9 +443,11 @@ export default function AttendancePolicies() {
 
     <li>
       <span className="wg-priority-num">→</span>
-      <div>
+      <div>Days that were already calculated keep the policy they were calculated with. If you recalculate a day (allowed until payroll is approved), the policy active at that moment is used. Approved payroll is locked and never changes.</div>
+      {/* <div>
         Payroll calculations always use the exact policy that was active on each day.
-      </div>
+        
+      </div> */}
     </li>
 
     <li>
@@ -465,8 +483,12 @@ export default function AttendancePolicies() {
           <table className="wg-table">
             <thead><tr><th>Policy Scope</th><th>Timezone Used</th></tr></thead>
             <tbody>
+              {/* <tr><td>Branch-scoped policies</td><td>The branch timezone</td></tr>
+              <tr><td>Company-wide, role, or individual policies</td><td>The company timezone</td></tr> */}
+
               <tr><td>Branch-scoped policies</td><td>The branch timezone</td></tr>
-              <tr><td>Company-wide, role, or individual policies</td><td>The company timezone</td></tr>
+<tr><td>Company-wide and role policies</td><td>The company timezone</td></tr>
+<tr><td>Individual policies</td><td>The employee's work timezone (company timezone if not set)</td></tr>
             </tbody>
           </table>
         </div>
