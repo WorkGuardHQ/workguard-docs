@@ -246,6 +246,7 @@ export default function LeaveManagement() {
           <li>Confirms the leave type is allowed by the policy</li>
           <li>Verifies there's sufficient balance available</li>
           <li>Excludes weekends and public holidays from the effective count</li>
+          <li>For employees assigned to multiple branches, a public holiday at any of their assigned branches excludes that day from the effective count, even if they submitted attendance for another branch that does not observe the holiday</li>
           <li>Confirms at least one working day falls in the requested period</li>
           <li>Creates the request in <strong>pending</strong> status</li>
         </ol>
