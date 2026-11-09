@@ -8,6 +8,7 @@
   gap: 8px;
   min-width: 220px;
   padding: 6px 10px;
+  margin: 10px;
   border: 1px solid var(--wg-border, #e2e2e6);
   border-radius: 8px;
   background: var(--wg-surface, #f7f7f9);
